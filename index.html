@@ -344,6 +344,107 @@
             color: var(--green);
         }
 
+        /* Experience Section */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .experience-item {
+            background-color: var(--light-navy);
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .experience-header {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .experience-role {
+            color: var(--lightest-slate);
+            font-size: clamp(22px, 4vw, 26px);
+            margin: 0;
+        }
+
+        .experience-company {
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: var(--fz-sm);
+        }
+
+        .experience-duration {
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+            color: var(--light-slate);
+        }
+
+        .experience-points {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .experience-points li {
+            position: relative;
+            padding-left: 25px;
+            color: var(--light-slate);
+        }
+
+        .experience-points li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-size: var(--fz-md);
+            line-height: 20px;
+        }
+
+        /* Education & Awards */
+        .education-list,
+        .awards-list {
+            display: grid;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .education-item,
+        .award-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background-color: var(--light-navy);
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .education-item h3,
+        .award-item h3 {
+            margin: 0;
+            color: var(--lightest-slate);
+            font-size: clamp(20px, 3vw, 24px);
+        }
+
+        .education-meta,
+        .award-meta {
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+            color: var(--light-slate);
+        }
+
+        .award-meta span {
+            color: var(--green);
+        }
+
         .project-image {
             box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
             grid-area: 1 / 6 / -1 / -1;
@@ -360,7 +461,6 @@
             height: 100%;
             background-color: var(--green);
             border-radius: 4px;
-            vertical-align: middle;
             display: block;
             position: relative;
             overflow: hidden;
@@ -523,24 +623,26 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="logo">&lt;A/&gt;</a>
+        <a href="#hero" class="logo">&lt;A/&gt;</a>
         <ul class="nav-links">
             <li><a href="#about"><span>01.</span>About</a></li>
-            <li><a href="#projects"><span>02.</span>Projects</a></li>
-            <li><a href="#contact"><span>03.</span>Contact</a></li>
+            <li><a href="#experience"><span>02.</span>Experience</a></li>
+            <li><a href="#education"><span>03.</span>Education</a></li>
+            <li><a href="#awards"><span>04.</span>Awards</a></li>
+            <li><a href="#contact"><span>05.</span>Contact</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="hero">
             <p class="intro">Hi, my name is</p>
-            <h1 class="hero-title">Arihant.</h1>
-            <h2 class="hero-subtitle">I build things for the web.</h2>
+            <h1 class="hero-title">Arihant Jain.</h1>
+            <h2 class="hero-subtitle">I scale backend systems and reliable APIs.</h2>
             <p class="hero-description">
-                I'm a software engineer specializing in building exceptional digital experiences. 
-                Currently, I'm focused on building accessible, human-centered products.
+                Experienced Software Development Engineer with a passion for distributed systems, real-time data flows, and
+                resilient platform architecture. I thrive in fast-paced environments where thoughtful automation and
+                developer experience are key to shipping impactful products.
             </p>
-            <a href="#projects" class="cta-button">Check out my work!</a>
         </section>
 
         <section id="about">
@@ -550,139 +652,141 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Hello! I'm Arihant, a passionate developer who enjoys creating things that live on the internet. 
-                        My interest in web development started back when I decided to try building custom websites — 
-                        turns out hacking together a custom theme taught me a lot about HTML & CSS!
+                        I'm currently a Software Development Engineer II at Thriwe, where I build and scale critical
+                        services that power Benefits-as-a-Service products for enterprise partners such as FAB, HSBC, and
+                        Mastercard. My journey started on the iOS side, but my curiosity for backend systems pushed me to
+                        take ownership of event-driven microservices and the infrastructure that keeps them humming.
                     </p>
                     <p>
-                        Fast-forward to today, and I've had the privilege of working on various projects ranging from 
-                        web applications to mobile apps. My main focus these days is building accessible, inclusive 
-                        products and digital experiences.
+                        Over the past few years I've led the migration of legacy monoliths into cloud-ready Golang services,
+                        orchestrated Kafka pipelines for real-time use cases, and automated CI/CD workflows that help teams
+                        deliver faster with confidence. I value clarity, observability, and empowering teammates through
+                        well-crafted tooling.
                     </p>
-                    <p>Here are a few technologies I've been working with recently:</p>
+                    <p>Here are the technologies I reach for most often:</p>
                     <ul class="skills-list">
-                        <li>JavaScript (ES6+)</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                        <li>TypeScript</li>
-                        <li>Next.js</li>
+                        <li>Go</li>
+                        <li>Swift</li>
+                        <li>C/C++</li>
+                        <li>Objective-C</li>
+                        <li>SQL</li>
+                        <li>Dart</li>
+                        <li>Kafka</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>CI/CD (GitHub Actions, Jenkins)</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
+        <section id="experience">
             <div class="section-heading">
-                <h2>Some Things I've Built</h2>
+                <h2>Where I've Worked</h2>
             </div>
-            <ul class="projects-grid">
-                <li class="project-card">
-                    <div class="project-content">
-                        <p class="project-overline">Featured Project</p>
-                        <h3 class="project-title">Project One</h3>
-                        <div class="project-description">
-                            <p>
-                                A full-stack web application that helps users manage their daily tasks and projects. 
-                                Features include real-time collaboration, task prioritization, and analytics dashboard.
-                            </p>
-                        </div>
-                        <ul class="project-tech-list">
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>MongoDB</li>
-                            <li>Socket.io</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" aria-label="GitHub Link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            </a>
-                            <a href="#" aria-label="External Link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            </a>
-                        </div>
+            <div class="experience-list">
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-role">Software Development Engineer II</h3>
+                        <span class="experience-company">Thriwe</span>
+                        <span class="experience-duration">Apr 2024 – Aug 2025 · Paris, France</span>
                     </div>
-                    <div class="project-image">
-                        <a href="#">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='438'%3E%3Crect fill='%23112240' width='700' height='438'/%3E%3Ctext fill='%2364ffda' font-family='monospace' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EProject Screenshot%3C/text%3E%3C/svg%3E" alt="Project One">
-                        </a>
-                    </div>
-                </li>
+                    <ul class="experience-points">
+                        <li>Designed and shipped a centralized communications platform handling SMS, email, and WhatsApp messaging with improved scalability and fault tolerance.</li>
+                        <li>Led the migration from a monolithic PHP stack to distributed Golang microservices backed by Kafka for real-time workflows.</li>
+                        <li>Automated Docker-based CI/CD pipelines with GitHub Actions, cutting release cycles by 40% and tightening deployment feedback loops.</li>
+                    </ul>
+                </article>
 
-                <li class="project-card">
-                    <div class="project-content">
-                        <p class="project-overline">Featured Project</p>
-                        <h3 class="project-title">Project Two</h3>
-                        <div class="project-description">
-                            <p>
-                                An e-commerce platform with advanced search capabilities, real-time inventory management, 
-                                and seamless payment integration for a smooth shopping experience.
-                            </p>
-                        </div>
-                        <ul class="project-tech-list">
-                            <li>Next.js</li>
-                            <li>TypeScript</li>
-                            <li>PostgreSQL</li>
-                            <li>Stripe</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" aria-label="GitHub Link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            </a>
-                            <a href="#" aria-label="External Link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            </a>
-                        </div>
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-role">Software Development Engineer I</h3>
+                        <span class="experience-company">Thriwe</span>
+                        <span class="experience-duration">Mar 2022 – Apr 2024 · New Delhi, India</span>
                     </div>
-                    <div class="project-image">
-                        <a href="#">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='438'%3E%3Crect fill='%23112240' width='700' height='438'/%3E%3Ctext fill='%2364ffda' font-family='monospace' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EProject Screenshot%3C/text%3E%3C/svg%3E" alt="Project Two">
-                        </a>
-                    </div>
-                </li>
+                    <ul class="experience-points">
+                        <li>Transitioned from iOS to backend engineering and delivered high-impact Golang services powering admin and customer applications.</li>
+                        <li>Architected real-time golf booking APIs, dashboards, and Kafka event flows that boosted booking efficiency by 60%.</li>
+                        <li>Kick-started the Benefits-as-a-Service platform later adopted by major banking partners and improved developer onboarding with Docker-based environments.</li>
+                    </ul>
+                </article>
 
-                <li class="project-card">
-                    <div class="project-content">
-                        <p class="project-overline">Featured Project</p>
-                        <h3 class="project-title">Project Three</h3>
-                        <div class="project-description">
-                            <p>
-                                A mobile-first progressive web app for tracking fitness goals and creating custom workout plans. 
-                                Includes social features for sharing progress with friends.
-                            </p>
-                        </div>
-                        <ul class="project-tech-list">
-                            <li>Vue.js</li>
-                            <li>Firebase</li>
-                            <li>PWA</li>
-                            <li>Chart.js</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" aria-label="GitHub Link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            </a>
-                            <a href="#" aria-label="External Link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            </a>
-                        </div>
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-role">iOS Developer</h3>
+                        <span class="experience-company">Thriwe</span>
+                        <span class="experience-duration">Jun 2021 – Mar 2022 · New Delhi, India</span>
                     </div>
-                    <div class="project-image">
-                        <a href="#">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='438'%3E%3Crect fill='%23112240' width='700' height='438'/%3E%3Ctext fill='%2364ffda' font-family='monospace' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EProject Screenshot%3C/text%3E%3C/svg%3E" alt="Project Three">
-                        </a>
+                    <ul class="experience-points">
+                        <li>Refactored legacy Swift applications to stabilize performance and improve runtime reliability across device generations.</li>
+                        <li>Integrated payment gateways, Firebase Cloud Messaging, and Google Maps APIs while managing Apple certificates and provisioning profiles.</li>
+                        <li>Resolved security vulnerabilities and strengthened deployment practices for production mobile builds.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-role">Research Trainee</h3>
+                        <span class="experience-company">DRDO</span>
+                        <span class="experience-duration">Jun 2019 – Aug 2019 · Delhi, India</span>
                     </div>
+                    <ul class="experience-points">
+                        <li>Investigated terahertz bi-material sensors with meta-material absorbers, contributing to advanced sensing prototypes.</li>
+                        <li>Assisted with design characterization to enhance sensor performance and detection accuracy by 45%.</li>
+                        <li>Collaborated with senior researchers on fabrication experiments and data analysis workflows.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-heading">
+                <h2>Education</h2>
+            </div>
+            <ul class="education-list">
+                <li class="education-item">
+                    <h3>École pour l’Informatique et les Techniques Avancées (EPITA)</h3>
+                    <span class="education-meta">MSc · Computer Science</span>
+                </li>
+                <li class="education-item">
+                    <h3>Jaypee Institute of Information Technology</h3>
+                    <span class="education-meta">Bachelor of Technology · Electronics and Communications</span>
+                </li>
+                <li class="education-item">
+                    <h3>Sumeet Rahul Sr. Sec. School</h3>
+                    <span class="education-meta">Class XII</span>
+                </li>
+                <li class="education-item">
+                    <h3>St. Peter’s College</h3>
+                    <span class="education-meta">Class X</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="awards">
+            <div class="section-heading">
+                <h2>Honors &amp; Awards</h2>
+            </div>
+            <ul class="awards-list">
+                <li class="award-item">
+                    <h3>The Values Award – Innovation</h3>
+                    <span class="award-meta"><span>Thriwe</span> · Mar 2024</span>
+                </li>
+                <li class="award-item">
+                    <h3>The Values Award – Impeccable</h3>
+                    <span class="award-meta"><span>Thriwe</span> · Mar 2023</span>
                 </li>
             </ul>
         </section>
 
         <section id="contact">
-            <span class="contact-overline">04. What's Next?</span>
+            <span class="contact-overline">05. What's Next?</span>
             <h2 class="contact-title">Get In Touch</h2>
             <p class="contact-text">
-                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
-                I'll try my best to get back to you!
+                I'm open to discussing backend roles, platform challenges, or collaborations around event-driven systems.
+                Drop me a note and I'll get back to you quickly.
             </p>
-            <a class="email-link" href="mailto:your.email@example.com">Say Hello</a>
+            <a class="email-link" href="mailto:jainarj411@gmail.com">Say Hello</a>
         </section>
     </main>
 
