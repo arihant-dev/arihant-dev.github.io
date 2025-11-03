@@ -3,99 +3,691 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Test</title>
+    <title>Arihant - Developer Portfolio</title>
     <style>
+        /* CSS Variables for Theme */
+        :root {
+            --navy: #0a192f;
+            --light-navy: #112240;
+            --lightest-navy: #233554;
+            --slate: #8892b0;
+            --light-slate: #a8b2d1;
+            --lightest-slate: #ccd6f6;
+            --white: #e6f1ff;
+            --green: #64ffda;
+            --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+            --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+            --fz-xs: 13px;
+            --fz-sm: 14px;
+            --fz-md: 16px;
+            --fz-lg: 18px;
+            --fz-xl: 20px;
+            --fz-xxl: 22px;
+            --fz-heading: 32px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: var(--font-sans);
+            background-color: var(--navy);
+            color: var(--slate);
+            line-height: 1.3;
+            font-size: var(--fz-xl);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 0 50px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-size: var(--fz-xxl);
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--lightest-slate);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+            transition: all 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        .nav-links span {
+            color: var(--green);
+            margin-right: 5px;
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 150px;
+        }
+
+        /* Hero Section */
+        #hero {
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            padding: 20px;
+            padding: 0;
         }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        .emoji {
-            font-size: 4em;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        p {
-            color: #666;
-            font-size: 1.2em;
-            line-height: 1.6;
+        .intro {
+            font-family: var(--font-mono);
+            color: var(--green);
+            font-size: var(--fz-md);
             margin-bottom: 30px;
         }
 
-        .button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
+        .hero-title {
+            font-size: clamp(40px, 8vw, 80px);
+            color: var(--lightest-slate);
             font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            line-height: 1.1;
+            margin: 0;
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        .hero-subtitle {
+            font-size: clamp(40px, 8vw, 80px);
+            color: var(--slate);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-top: 10px;
         }
 
-        .info {
-            margin-top: 40px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+        .hero-description {
+            margin-top: 25px;
+            max-width: 540px;
+            line-height: 1.5;
         }
 
-        .info h2 {
-            color: #667eea;
-            font-size: 1.3em;
+        .cta-button {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 1.25rem 1.75rem;
+            border: 1px solid var(--green);
+            border-radius: 4px;
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: var(--fz-sm);
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0 0 var(--green);
+        }
+
+        /* Section Styles */
+        section {
+            margin: 0 auto;
+            padding: 100px 0;
+            max-width: 1000px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 10px 0 40px;
+            width: 100%;
+            font-size: var(--fz-heading);
+            white-space: nowrap;
+        }
+
+        .section-heading::before {
+            content: '0' counter(section) '.';
+            counter-increment: section;
+            margin-right: 10px;
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+            font-weight: 400;
+        }
+
+        .section-heading h2 {
+            color: var(--lightest-slate);
+            font-weight: 600;
+        }
+
+        .section-heading::after {
+            content: '';
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: var(--lightest-navy);
+        }
+
+        #about {
+            counter-reset: section 0;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(140px, 200px));
+            gap: 0 10px;
+            padding: 0;
+            margin: 20px 0 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 20px;
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
             margin-bottom: 10px;
         }
 
-        .info p {
-            font-size: 0.95em;
-            margin-bottom: 0;
+        .skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-size: var(--fz-sm);
+            line-height: 12px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .project-card {
+            position: relative;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(12, 1fr);
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .project-content {
+            position: relative;
+            grid-area: 1 / 1 / -1 / 7;
+            z-index: 2;
+        }
+
+        .project-card:nth-of-type(2n) .project-content {
+            grid-column: 7 / -1;
+            text-align: right;
+        }
+
+        .project-overline {
+            margin: 10px 0;
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+            font-weight: 400;
+        }
+
+        .project-title {
+            color: var(--lightest-slate);
+            font-size: clamp(24px, 5vw, 28px);
+            margin: 0 0 20px;
+        }
+
+        .project-description {
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            position: relative;
+            z-index: 2;
+            padding: 25px;
+            border-radius: 4px;
+            background-color: var(--light-navy);
+            color: var(--light-slate);
+            font-size: var(--fz-lg);
+        }
+
+        .project-card:nth-of-type(2n) .project-description {
+            text-align: left;
+        }
+
+        .project-tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+            margin: 25px 0 10px;
+            padding: 0;
+            list-style: none;
+            gap: 15px;
+        }
+
+        .project-card:nth-of-type(2n) .project-tech-list {
+            justify-content: flex-end;
+        }
+
+        .project-tech-list li {
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+            color: var(--light-slate);
+        }
+
+        .project-links {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 10px;
+            margin-left: -10px;
+            color: var(--lightest-slate);
+            gap: 10px;
+        }
+
+        .project-card:nth-of-type(2n) .project-links {
+            justify-content: flex-end;
+            margin-left: 0;
+            margin-right: -10px;
+        }
+
+        .project-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            color: var(--lightest-slate);
+            transition: all 0.25s;
+        }
+
+        .project-links a:hover {
+            color: var(--green);
+        }
+
+        .project-image {
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            grid-area: 1 / 6 / -1 / -1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-card:nth-of-type(2n) .project-image {
+            grid-column: 1 / 8;
+        }
+
+        .project-image a {
+            width: 100%;
+            height: 100%;
+            background-color: var(--green);
+            border-radius: 4px;
+            vertical-align: middle;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            mix-blend-mode: multiply;
+            filter: grayscale(100%) contrast(1) brightness(90%);
+            transition: all 0.25s;
+        }
+
+        .project-image a:hover img {
+            filter: none;
+            mix-blend-mode: normal;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-overline {
+            display: block;
+            margin-bottom: 20px;
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: var(--fz-md);
+            font-weight: 400;
+        }
+
+        .contact-title {
+            font-size: clamp(40px, 5vw, 60px);
+            color: var(--lightest-slate);
+        }
+
+        .contact-text {
+            margin-top: 20px;
+        }
+
+        .email-link {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 1.25rem 1.75rem;
+            border: 1px solid var(--green);
+            border-radius: 4px;
+            color: var(--green);
+            font-family: var(--font-mono);
+            font-size: var(--fz-sm);
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .email-link:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0 0 var(--green);
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+            min-height: 70px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: var(--font-mono);
+            font-size: var(--fz-xs);
+            color: var(--slate);
+        }
+
+        /* Responsive */
+        @media (max-width: 1080px) {
+            main {
+                padding: 0 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 25px;
+            }
+
+            main {
+                padding: 0 50px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .section-heading::after {
+                width: 100%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-content {
+                grid-column: 1 / -1 !important;
+                padding: 40px 25px;
+                text-align: left !important;
+            }
+
+            .project-image {
+                grid-column: 1 / -1 !important;
+                opacity: 0.25;
+            }
+
+            .project-description {
+                padding: 20px 0;
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            .project-tech-list {
+                justify-content: flex-start !important;
+            }
+
+            .project-links {
+                justify-content: flex-start !important;
+                margin-left: -10px !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0 25px;
+            }
+
+            main {
+                padding: 0 25px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            #hero {
+                padding-top: 100px;
+            }
+
+            .section-heading {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <span class="emoji">🚀</span>
-        <h1>Welcome to My Site!</h1>
-        <p>Congratulations! Your GitHub Pages site is now live and working perfectly.</p>
-        <a href="https://github.com" class="button">Visit GitHub</a>
-        
-        <div class="info">
-            <h2>Next Steps</h2>
-            <p>Edit this index.html file to customize your website. Add more pages, styles, and make it your own!</p>
-        </div>
-    </div>
+    <nav>
+        <a href="#" class="logo">&lt;A/&gt;</a>
+        <ul class="nav-links">
+            <li><a href="#about"><span>01.</span>About</a></li>
+            <li><a href="#projects"><span>02.</span>Projects</a></li>
+            <li><a href="#contact"><span>03.</span>Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <p class="intro">Hi, my name is</p>
+            <h1 class="hero-title">Arihant.</h1>
+            <h2 class="hero-subtitle">I build things for the web.</h2>
+            <p class="hero-description">
+                I'm a software engineer specializing in building exceptional digital experiences. 
+                Currently, I'm focused on building accessible, human-centered products.
+            </p>
+            <a href="#projects" class="cta-button">Check out my work!</a>
+        </section>
+
+        <section id="about">
+            <div class="section-heading">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm Arihant, a passionate developer who enjoys creating things that live on the internet. 
+                        My interest in web development started back when I decided to try building custom websites — 
+                        turns out hacking together a custom theme taught me a lot about HTML & CSS!
+                    </p>
+                    <p>
+                        Fast-forward to today, and I've had the privilege of working on various projects ranging from 
+                        web applications to mobile apps. My main focus these days is building accessible, inclusive 
+                        products and digital experiences.
+                    </p>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul class="skills-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>TypeScript</li>
+                        <li>Next.js</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-heading">
+                <h2>Some Things I've Built</h2>
+            </div>
+            <ul class="projects-grid">
+                <li class="project-card">
+                    <div class="project-content">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">Project One</h3>
+                        <div class="project-description">
+                            <p>
+                                A full-stack web application that helps users manage their daily tasks and projects. 
+                                Features include real-time collaboration, task prioritization, and analytics dashboard.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>MongoDB</li>
+                            <li>Socket.io</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="#" aria-label="External Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <a href="#">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='438'%3E%3Crect fill='%23112240' width='700' height='438'/%3E%3Ctext fill='%2364ffda' font-family='monospace' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EProject Screenshot%3C/text%3E%3C/svg%3E" alt="Project One">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="project-card">
+                    <div class="project-content">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">Project Two</h3>
+                        <div class="project-description">
+                            <p>
+                                An e-commerce platform with advanced search capabilities, real-time inventory management, 
+                                and seamless payment integration for a smooth shopping experience.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Next.js</li>
+                            <li>TypeScript</li>
+                            <li>PostgreSQL</li>
+                            <li>Stripe</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="#" aria-label="External Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <a href="#">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='438'%3E%3Crect fill='%23112240' width='700' height='438'/%3E%3Ctext fill='%2364ffda' font-family='monospace' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EProject Screenshot%3C/text%3E%3C/svg%3E" alt="Project Two">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="project-card">
+                    <div class="project-content">
+                        <p class="project-overline">Featured Project</p>
+                        <h3 class="project-title">Project Three</h3>
+                        <div class="project-description">
+                            <p>
+                                A mobile-first progressive web app for tracking fitness goals and creating custom workout plans. 
+                                Includes social features for sharing progress with friends.
+                            </p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>Vue.js</li>
+                            <li>Firebase</li>
+                            <li>PWA</li>
+                            <li>Chart.js</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" aria-label="GitHub Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="#" aria-label="External Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1-2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <a href="#">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='438'%3E%3Crect fill='%23112240' width='700' height='438'/%3E%3Ctext fill='%2364ffda' font-family='monospace' font-size='24' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EProject Screenshot%3C/text%3E%3C/svg%3E" alt="Project Three">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <span class="contact-overline">04. What's Next?</span>
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-text">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
+                I'll try my best to get back to you!
+            </p>
+            <a class="email-link" href="mailto:your.email@example.com">Say Hello</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built by Arihant | Inspired by Brittany Chiang</p>
+    </footer>
 </body>
 </html>
