@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arihant - Status</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">Index</a>
+            <a href="experience.html">Experience</a>
+            <a href="oss.html">OSS</a>
+            <a href="journal.html">Journal</a>
+            <a href="status.html" class="active">Status</a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle">
+            <span class="theme-toggle-text">LIGHT MODE</span>
+        </button>
+        <button class="hamburger"></button>
+    </nav>
+
+    <main>
+        <section id="status">
+            <div class="section-heading">
+                <h2>Status</h2>
+            </div>
+            
+            <div class="legend">
+                <strong>Priority:</strong>
+                <span class="priority-indicator"><span class="priority-square priority-square-high"></span> High</span>
+                <span class="priority-indicator"><span class="priority-square priority-square-medium"></span> Medium</span>
+                <span class="priority-indicator"><span class="priority-square priority-square-low"></span> Low</span>
+            </div>
+
+            <div class="kanban-board">
+                <div class="kanban-column">
+                    <div class="column-header">TO DO</div>
+                    <div class="column-content">
+                        <!-- Placeholder for future tasks -->
+                    </div>
+                </div>
+
+                <div class="kanban-column">
+                    <div class="column-header">IN PROGRESS</div>
+                    <div class="column-content">
+                        <div class="kanban-card priority-high">
+                            <div class="card-title">Advent of Code 2025</div>
+                            <div class="card-description">Day 10/25 Completed</div>
+                            <div class="card-meta">Daily Challenge</div>
+                        </div>
+                        <div class="kanban-card priority-high">
+                            <div class="card-title">Leetcode Streak</div>
+                            <div class="card-description">58 Days and counting</div>
+                            <div class="card-meta">Daily Practice</div>
+                        </div>
+                        <div class="kanban-card priority-medium">
+                            <div class="card-title">MIT 6.824 Distributed Systems</div>
+                            <div class="card-description">Lecture 3: GFS</div>
+                            <div class="card-meta">Self-Paced</div>
+                        </div>
+                        <div class="kanban-card priority-medium">
+                            <div class="card-title">MIT 6.006 (2020)</div>
+                            <div class="card-description">Lecture 12: Binary Heap</div>
+                            <div class="card-meta">Self-Paced</div>
+                        </div>
+                        <div class="kanban-card priority-medium">
+                            <div class="card-title">MIT 6.006 (2009)</div>
+                            <div class="card-description">Lecture 9: Table Doubling, Karp-Rabin</div>
+                            <div class="card-meta">Self-Paced</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban-column">
+                    <div class="column-header">DONE</div>
+                    <div class="column-content">
+                        <!-- Placeholder for completed tasks -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="last-updated">
+                Last updated: December 10, 2025
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="oneko.js"></script>
+</body>
+</html>

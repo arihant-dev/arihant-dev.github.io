@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arihant - Journal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html">Index</a>
+            <a href="experience.html">Experience</a>
+            <a href="oss.html">OSS</a>
+            <a href="journal.html" class="active">Journal</a>
+            <a href="status.html">Status</a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle">
+            <span class="theme-toggle-text">LIGHT MODE</span>
+        </button>
+        <button class="hamburger"></button>
+    </nav>
+
+    <main>
+        <section id="journal">
+            <div class="section-heading">
+                <h2>Journal</h2>
+            </div>
+            <div class="blog-list">
+                <article class="blog-item">
+                    <h3 class="blog-title">Understanding Map Reduce & The 1 Billion Row Challenge</h3>
+                    <span class="blog-date">December 10, 2025</span>
+                    <div class="blog-content">
+                        <p>
+                            Recently, I've been diving deep into distributed systems and came across the fascinating concept of Map Reduce. 
+                            It's a programming model and an associated implementation for processing and generating big data sets with a parallel, distributed algorithm on a cluster.
+                        </p>
+                        <p>
+                            Inspired by the <a href="https://github.com/gunnarmorling/1brc" target="_blank" rel="noopener noreferrer">1 Billion Row Challenge</a> hosted on GitHub, 
+                            I decided to implement a simplified version of Map Reduce for a side project. The goal was to process a massive dataset efficiently by splitting the work across multiple nodes (Map phase) and then aggregating the results (Reduce phase).
+                        </p>
+                        <p>
+                            My understanding was greatly enhanced by the <a href="https://pdos.csail.mit.edu/6.824/" target="_blank" rel="noopener noreferrer">MIT 6.824 Distributed Systems Lecture 1</a> and the Map Reduce paper by Jeffrey and Sanjay, which provides a rigorous theoretical foundation for such algorithms.
+                            Implementing this gave me hands-on experience with data partitioning, shuffling, and handling node failures in a distributed environment.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="oneko.js"></script>
+</body>
+</html>
