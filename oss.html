@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arihant - OSS</title>
+    <title>Arihant - Projects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <div class="nav-left">
             <a href="index.html">Index</a>
             <a href="experience.html">Experience</a>
-            <a href="oss.html" class="active">OSS</a>
+            <a href="oss.html" class="active">Projects</a>
             <a href="journal.html">Journal</a>
             <a href="status.html">Status</a>
         </div>
@@ -22,13 +22,92 @@
     </nav>
 
     <main>
-        <section id="oss">
+        <section id="projects">
             <div class="section-heading">
-                <h2>Open Source Software</h2>
+                <h2>Projects</h2>
             </div>
-            <div class="oss-content">
-                <p>Coming soon...</p>
-                <!-- Placeholder for OSS contributions -->
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-card-header">
+                        <h3>Forest BD Viewer</h3>
+                        <span class="featured-label">FEATURED</span>
+                    </div>
+                    <div class="project-card-body">
+                        <p>
+                            Full-stack geospatial application for visualizing French forest
+                            biodiversity data (BD Foret V2) and land parcels across
+                            Ile-de-France. Features interactive multi-level mapping with
+                            zoom-dependent layer switching, polygon analysis for forest
+                            coverage and species breakdown, EN/FR internationalization,
+                            and JWT authentication-gated features.
+                        </p>
+                        <ul class="project-features">
+                            <li>Interactive mapping with zoom-dependent layers (regions, departments, communes, forest types, cadastre parcels)</li>
+                            <li>Polygon analysis returning area, forest coverage, TFV breakdown, and top 8 dominant tree species</li>
+                            <li>Redis-cached MVT tile serving with 24h/7d TTL</li>
+                            <li>Context-based EN/FR internationalization across UI, legends, popups, and analysis results</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Next.js 16</span>
+                            <span class="tech-tag">React 19</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Redux Toolkit</span>
+                            <span class="tech-tag">Go 1.24</span>
+                            <span class="tech-tag">Echo</span>
+                            <span class="tech-tag">gqlgen</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PostGIS</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Mapbox GL JS</span>
+                            <span class="tech-tag">Docker Compose</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/arihant-dev/forest-bd-viewer" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <h3>Command Shell</h3>
+                    </div>
+                    <div class="project-card-body">
+                        <p>
+                            Custom POSIX-compliant shell implemented from scratch in Go
+                            without using standard libraries for process management.
+                        </p>
+                        <ul class="project-features">
+                            <li>Pipe handling (<code>|</code>) and I/O redirection</li>
+                            <li>Signal management (SIGINT, SIGTSTP)</li>
+                            <li>Background execution and job control</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Go</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/arihant-dev/command-shell" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <h3>TVPlay</h3>
+                    </div>
+                    <div class="project-card-body">
+                        <p>
+                            High-performance CLI tool that renders video media as ASCII art
+                            in the terminal in real-time.
+                        </p>
+                        <ul class="project-features">
+                            <li>FFmpeg bindings for frame extraction</li>
+                            <li>Optimized terminal cursor manipulation for smooth playback</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">FFmpeg</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/arihant-dev/tvplay" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

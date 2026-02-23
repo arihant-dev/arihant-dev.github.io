@@ -986,3 +986,233 @@ p {
   border-top: 1px solid var(--border-color);
   padding-top: 1rem;
 }
+
+/* =============================================
+   Project Cards (retro Web 1.0 style)
+   ============================================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  border: 2px solid #000000;
+  background-color: #f0f0f0;
+  padding: 0;
+}
+
+[data-theme="dark"] .project-card {
+  border: 2px solid #666666;
+  background-color: var(--border-color);
+}
+
+.project-card-header {
+  background-color: #c0c0c0;
+  border-bottom: 2px solid #000000;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-theme="dark"] .project-card-header {
+  background-color: #666666;
+  border-bottom: 2px solid #888888;
+  color: #ffffff;
+}
+
+.project-card-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #000000;
+}
+
+[data-theme="dark"] .project-card-header h3 {
+  color: #ffffff;
+}
+
+.project-card-body {
+  padding: 1rem;
+  border: 2px inset #cccccc;
+  margin: 0.75rem;
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] .project-card-body {
+  border: 2px inset #555555;
+  background-color: var(--bg-color);
+}
+
+.project-card-body p {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+.project-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Featured project card */
+.project-card.featured {
+  border-left: 5px solid #cc0000;
+}
+
+[data-theme="dark"] .project-card.featured {
+  border-left: 5px solid #ff4444;
+}
+
+.featured-label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #cc0000;
+  color: #ffffff;
+  padding: 2px 6px;
+  border: 1px outset #cc0000;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+[data-theme="dark"] .featured-label {
+  background: #ff4444;
+  border: 1px outset #ff4444;
+}
+
+/* Tech stack tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-weight: bold;
+  padding: 2px 6px;
+  border: 2px outset #c0c0c0;
+  background: #e0e0e0;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="dark"] .tech-tag {
+  border: 2px outset #555555;
+  background: #404040;
+  color: #e0e0e0;
+}
+
+/* GitHub link as retro button */
+.project-link {
+  display: inline-block;
+  border: 2px outset #cccccc;
+  background: #f0f0f0;
+  color: #000000;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: none;
+  text-decoration: none;
+  margin-top: 0.75rem;
+}
+
+.project-link:hover {
+  border: 2px inset #cccccc;
+}
+
+.project-link:active {
+  border: 2px inset #999999;
+  background: #e0e0e0;
+}
+
+[data-theme="dark"] .project-link {
+  border: 2px outset #666666;
+  background: #404040;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .project-link:hover {
+  border: 2px inset #666666;
+}
+
+[data-theme="dark"] .project-link:active {
+  border: 2px inset #333333;
+  background: #303030;
+}
+
+/* Features list inside project card */
+.project-features {
+  list-style: square;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 0 0;
+  font-size: 0.85rem;
+}
+
+.project-features li {
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .project-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tech-tags {
+    gap: 0.3rem;
+  }
+}
+
+/* =============================================
+   Skills categories (About section)
+   ============================================= */
+
+.skills-categories {
+  margin-top: 0.75rem;
+}
+
+.skill-category {
+  margin-bottom: 0.75rem;
+}
+
+.skill-category-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.skill-category-items {
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+
+/* Job-seeking notice */
+.seeking-notice {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px inset #cccccc;
+  background: #fffff0;
+  font-size: 0.85rem;
+}
+
+[data-theme="dark"] .seeking-notice {
+  border: 2px inset #555555;
+  background: #2a2a20;
+}
+
+/* Education detail */
+.education-detail {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
