@@ -34,18 +34,17 @@
                     </div>
                     <div class="project-card-body">
                         <p>
-                            Full-stack geospatial application for visualizing French forest
-                            biodiversity data (BD Foret V2) and land parcels across
-                            Ile-de-France. Features interactive multi-level mapping with
-                            zoom-dependent layer switching, polygon analysis for forest
-                            coverage and species breakdown, EN/FR internationalization,
-                            and JWT authentication-gated features.
+                            Full-stack geospatial application for querying and visualizing
+                            French forest biodiversity data (BD Foret V2) across
+                            Ile-de-France. Go backend serves spatial tiles via GraphQL;
+                            Next.js frontend renders multi-level Mapbox layers with
+                            polygon-based analysis.
                         </p>
                         <ul class="project-features">
-                            <li>Interactive mapping with zoom-dependent layers (regions, departments, communes, forest types, cadastre parcels)</li>
-                            <li>Polygon analysis returning area, forest coverage, TFV breakdown, and top 8 dominant tree species</li>
-                            <li>Redis-cached MVT tile serving with 24h/7d TTL</li>
-                            <li>Context-based EN/FR internationalization across UI, legends, popups, and analysis results</li>
+                            <li>Zoom-dependent layer switching: regions &rarr; departments &rarr; communes &rarr; forest types &rarr; cadastre parcels</li>
+                            <li>Polygon analysis: area computation, forest coverage stats, TFV breakdown, top-8 species by hectare</li>
+                            <li>Redis-cached MVT tile serving (24h/7d TTL) backed by PostGIS spatial queries</li>
+                            <li>JWT auth-gated endpoints, context-based EN/FR i18n</li>
                         </ul>
                         <div class="tech-tags">
                             <span class="tech-tag">Next.js 16</span>
