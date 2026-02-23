@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arihant - Projects</title>
+    <meta name="description" content="Arihant Jain's projects - Forest BD Viewer (geospatial full-stack app), Command Shell, TVPlay ASCII video renderer.">
+    <link rel="canonical" href="https://arihant-dev.github.io/oss.html">
+    <meta property="og:title" content="Arihant Jain &middot; Projects">
+    <meta property="og:description" content="Forest BD Viewer, Command Shell, TVPlay - Go-powered projects in distributed systems and systems programming.">
+    <meta property="og:url" content="https://arihant-dev.github.io/oss.html">
+    <meta property="og:image" content="https://arihant-dev.github.io/profile_photo.jpg">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AJ</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav>
+<body data-theme="dark">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav aria-label="Main navigation">
         <div class="nav-left">
             <a href="index.html">Index</a>
             <a href="experience.html">Experience</a>
@@ -15,13 +23,15 @@
             <a href="journal.html">Journal</a>
             <a href="status.html">Status</a>
         </div>
-        <button class="theme-toggle" id="theme-toggle">
-            <span class="theme-toggle-text">LIGHT MODE</span>
-        </button>
-        <button class="hamburger"></button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme (t)" aria-label="Toggle dark/light theme">&#9790;</button>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"></button>
     </nav>
 
-    <main>
+    <div class="kbd-hint" id="kbd-hint">
+        <span><kbd>1</kbd>-<kbd>5</kbd> pages &middot; <kbd>j</kbd>/<kbd>k</kbd> scroll &middot; <kbd>t</kbd> theme</span>
+    </div>
+
+    <main id="main-content">
         <section id="projects">
             <div class="section-heading">
                 <h2>Projects</h2>
@@ -34,11 +44,11 @@
                     </div>
                     <div class="project-card-body">
                         <p>
-                            Full-stack geospatial application for querying and visualizing
-                            French forest biodiversity data (BD Foret V2) across
-                            Ile-de-France. Go backend serves spatial tiles via GraphQL;
-                            Next.js frontend renders multi-level Mapbox layers with
-                            polygon-based analysis.
+                            I wanted to explore how GIS data works at scale, so I built a
+                            full-stack app for querying and visualizing French forest
+                            biodiversity data (BD For&ecirc;t V2) across &Icirc;le-de-France.
+                            Go backend serves spatial tiles via GraphQL; Next.js frontend
+                            renders multi-level Mapbox layers with polygon-based analysis.
                         </p>
                         <ul class="project-features">
                             <li>Zoom-dependent layer switching: regions &rarr; departments &rarr; communes &rarr; forest types &rarr; cadastre parcels</li>
@@ -46,6 +56,18 @@
                             <li>Redis-cached MVT tile serving (24h/7d TTL) backed by PostGIS spatial queries</li>
                             <li>JWT auth-gated endpoints, context-based EN/FR i18n</li>
                         </ul>
+                        <div class="arch-diagram" aria-label="Architecture diagram">Browser (Next.js/React/Mapbox GL JS)
+    |
+    | HTTP/GraphQL
+    v
+Go API Server (Echo + gqlgen)
+    |
+    +---> PostgreSQL/PostGIS  (spatial data, BD Foret V2)
+    +---> Redis               (MVT tile cache, 24h/7d TTL)
+    +---> JWT Auth            (stateless token validation)
+    |
+    v
+Docker Compose (app + db + cache)</div>
                         <div class="tech-tags">
                             <span class="tech-tag">Next.js 16</span>
                             <span class="tech-tag">React 19</span>
@@ -72,8 +94,9 @@
                     </div>
                     <div class="project-card-body">
                         <p>
-                            Custom POSIX-compliant shell implemented from scratch in Go
-                            without using standard libraries for process management.
+                            Because apparently I can&rsquo;t stop writing Go. A POSIX-compliant
+                            shell implemented from scratch &mdash; no standard library shortcuts
+                            for process management. Pipes, signals, job control, the works.
                         </p>
                         <ul class="project-features">
                             <li>Pipe handling (<code>|</code>) and I/O redirection</li>
@@ -93,8 +116,9 @@
                     </div>
                     <div class="project-card-body">
                         <p>
-                            High-performance CLI tool that renders video media as ASCII art
-                            in the terminal in real-time.
+                            What if you could watch a movie&hellip; in your terminal?
+                            A CLI tool that renders video as ASCII art in real-time.
+                            Completely unnecessary. Completely fun.
                         </p>
                         <ul class="project-features">
                             <li>FFmpeg bindings for frame extraction</li>
@@ -113,5 +137,6 @@
 
     <script src="script.js"></script>
     <script src="oneko.js"></script>
+    <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

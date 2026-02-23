@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arihant - Status</title>
+    <meta name="description" content="Arihant Jain's current status - what I'm working on, learning, and planning.">
+    <link rel="canonical" href="https://arihant-dev.github.io/status.html">
+    <meta property="og:title" content="Arihant Jain &middot; Status">
+    <meta property="og:description" content="What I'm currently working on, learning, and planning.">
+    <meta property="og:url" content="https://arihant-dev.github.io/status.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AJ</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav>
+<body data-theme="dark">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav aria-label="Main navigation">
         <div class="nav-left">
             <a href="index.html">Index</a>
             <a href="experience.html">Experience</a>
@@ -15,18 +22,20 @@
             <a href="journal.html">Journal</a>
             <a href="status.html" class="active">Status</a>
         </div>
-        <button class="theme-toggle" id="theme-toggle">
-            <span class="theme-toggle-text">LIGHT MODE</span>
-        </button>
-        <button class="hamburger"></button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme (t)" aria-label="Toggle dark/light theme">&#9790;</button>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"></button>
     </nav>
 
-    <main>
+    <div class="kbd-hint" id="kbd-hint">
+        <span><kbd>1</kbd>-<kbd>5</kbd> pages &middot; <kbd>j</kbd>/<kbd>k</kbd> scroll &middot; <kbd>t</kbd> theme</span>
+    </div>
+
+    <main id="main-content">
         <section id="status">
             <div class="section-heading">
                 <h2>Status</h2>
             </div>
-            
+
             <div class="legend">
                 <strong>Priority:</strong>
                 <span class="priority-indicator"><span class="priority-square priority-square-high"></span> High</span>
@@ -40,7 +49,7 @@
                     <div class="column-content">
                         <div class="kanban-card priority-high">
                             <div class="card-title">Hike</div>
-                            <div class="card-description">Domaine d'Ors and the Vallée de la Mérantaise</div>
+                            <div class="card-description">Domaine d'Ors and the Vall&eacute;e de la M&eacute;rantaise</div>
                             <div class="card-meta">Sunday, 14th December</div>
                         </div>
                     </div>
@@ -98,14 +107,11 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="last-updated">
-                Last updated: December 10, 2025
-            </div>
         </section>
     </main>
 
     <script src="script.js"></script>
     <script src="oneko.js"></script>
+    <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

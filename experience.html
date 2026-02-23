@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arihant - Experience</title>
+    <title>Arihant Jain &middot; Experience</title>
+    <meta name="description" content="Arihant Jain's professional experience - Software Engineer at Thriwe, Research Trainee at DRDO. Education at EPITA and JIIT.">
+    <link rel="canonical" href="https://arihant-dev.github.io/experience.html">
+    <meta property="og:title" content="Arihant Jain &middot; Experience">
+    <meta property="og:description" content="4+ years backend engineering at Thriwe. Go microservices, Kafka pipelines, distributed systems.">
+    <meta property="og:url" content="https://arihant-dev.github.io/experience.html">
+    <meta property="og:image" content="https://arihant-dev.github.io/profile_photo.jpg">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AJ</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav>
+<body data-theme="dark">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav aria-label="Main navigation">
         <div class="nav-left">
             <a href="index.html">Index</a>
             <a href="experience.html" class="active">Experience</a>
@@ -15,44 +23,44 @@
             <a href="journal.html">Journal</a>
             <a href="status.html">Status</a>
         </div>
-        <button class="theme-toggle" id="theme-toggle">
-            <span class="theme-toggle-text">LIGHT MODE</span>
-        </button>
-        <button class="hamburger"></button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme (t)" aria-label="Toggle dark/light theme">&#9790;</button>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"></button>
     </nav>
 
-    <main>
+    <div class="kbd-hint" id="kbd-hint">
+        <span><kbd>1</kbd>-<kbd>5</kbd> pages &middot; <kbd>j</kbd>/<kbd>k</kbd> scroll &middot; <kbd>t</kbd> theme</span>
+    </div>
+
+    <main id="main-content">
         <section id="experience">
             <div class="section-heading">
-                <h2>Where I've Worked</h2>
+                <h2>Where I&rsquo;ve Shipped Code</h2>
             </div>
             <div class="experience-list">
                 <article class="experience-item">
                     <div class="experience-header">
                         <h3 class="experience-role">Software Engineer</h3>
                         <span class="experience-company">Thriwe</span>
-                        <span class="experience-duration">June 2021 – Aug 2025 · Delhi, India</span>
+                        <span class="experience-duration">June 2021 &ndash; Aug 2025 &middot; Delhi, India</span>
                     </div>
                     <ul class="experience-points">
-                        <li><strong>Distributed migration:</strong> Coordinated migration from a legacy PHP monolith to a Go microservices architecture; reduced technical debt and improved critical API response times by 30%.</li>
-                        <li><strong>Reliable notifications:</strong> Built a centralized notification service (SMS/Email/WhatsApp) handling 10,000+ notifications/day; added retries, circuit breakers, and idempotency to sustain 99.9% availability under peak load.</li>
-                        <li><strong>Event-driven pipelines:</strong> Designed Kafka-based pipelines processing 5k+ events/s to power near real-time analytics for banking partners.</li>
-                        <li><strong>CI/CD &amp; release velocity:</strong> Implemented CI/CD with Docker + GitHub Actions; reduced deployment time from 45 minutes to 15 minutes and enabled daily production releases.</li>
-                        <li><strong>Security &amp; APIs:</strong> Delivered stateless services with JWT auth and RBAC for employee benefits programs serving enterprise clients (e.g., HSBC, Mastercard).</li>
-                        <li><strong>Developer productivity:</strong> Standardized local environments with Docker Compose; cut onboarding from 2 weeks to 2 days.</li>
+                        <li><strong>Killed the monolith:</strong> Led migration from a legacy PHP monolith to Go microservices &mdash; reduced technical debt and cut critical API response times by 30%.</li>
+                        <li><strong>Notifications that actually arrive:</strong> Built a centralized notification service (SMS/Email/WhatsApp) handling 10,000+ notifications/day with retries, circuit breakers, and idempotency. 99.9% availability under peak load.</li>
+                        <li><strong>Real-time at scale:</strong> Designed Kafka-based pipelines processing 5k+ events/s to power near real-time analytics for banking partners.</li>
+                        <li><strong>Ship daily, not monthly:</strong> Implemented CI/CD with Docker + GitHub Actions; reduced deployment time from 45 min to 15 min and enabled daily production releases.</li>
+                        <li><strong>Security &amp; APIs:</strong> Delivered stateless services with JWT auth and RBAC for employee benefits programs serving enterprise clients (HSBC, Mastercard).</li>
+                        <li><strong>Onboarding in 2 days:</strong> Standardized local environments with Docker Compose; cut developer onboarding from 2 weeks to 2 days.</li>
                     </ul>
                 </article>
 
-                <article class="experience-item">
+                <article class="experience-item experience-minor">
                     <div class="experience-header">
                         <h3 class="experience-role">Research Trainee</h3>
-                        <span class="experience-company">DRDO</span>
-                        <span class="experience-duration">Jun 2019 – Aug 2019 · Delhi, India</span>
+                        <span class="experience-company">DRDO (Defence Research)</span>
+                        <span class="experience-duration">Jun &ndash; Aug 2019 &middot; Delhi, India</span>
                     </div>
                     <ul class="experience-points">
-                        <li>Investigated terahertz bi-material sensors with meta-material absorbers, contributing to advanced sensing prototypes.</li>
-                        <li>Assisted with design characterization to enhance sensor performance and detection accuracy by 45%.</li>
-                        <li>Collaborated with senior researchers on fabrication experiments and data analysis workflows.</li>
+                        <li>Investigated terahertz bi-material sensors with meta-material absorbers; improved sensor detection accuracy by 45%.</li>
                     </ul>
                 </article>
             </div>
@@ -60,33 +68,37 @@
 
         <section id="education">
             <div class="section-heading">
-                <h2>Education</h2>
+                <h2>Where I Studied</h2>
             </div>
             <ul class="education-list">
                 <li class="education-item">
-                    <h3>École pour l'Informatique et les Techniques Avancées (EPITA)</h3>
-                    <span class="education-meta">MSc · Computer Science · Expected Sept 2026</span>
-                    <p class="education-detail">Relevant Coursework: Advanced Algorithms, Distributed Systems, Cloud Computing, System Design.</p>
+                    <h3>EPITA (Paris, France)</h3>
+                    <span class="education-meta">MSc &middot; Computer Science &middot; Expected Sept 2026</span>
+                    <span class="education-grade">16.36/20 &middot; ~3.8/4.0 GPA</span>
+                    <p class="education-detail">
+                        Top 10 in a cohort of 92 &middot; 30 ECTS completed (Semester 1).<br>
+                        Coursework: Advanced Algorithms, Distributed Systems, Cloud Computing, System Design.
+                    </p>
                 </li>
                 <li class="education-item">
                     <h3>Jaypee Institute of Information Technology</h3>
-                    <span class="education-meta">Bachelor of Technology · Electronics and Communications · 2017 – 2021</span>
+                    <span class="education-meta">B.Tech &middot; Electronics &amp; Communications &middot; 2017 &ndash; 2021</span>
                 </li>
             </ul>
         </section>
 
         <section id="awards">
             <div class="section-heading">
-                <h2>Honors &amp; Awards</h2>
+                <h2>Recognition</h2>
             </div>
             <ul class="awards-list">
                 <li class="award-item">
-                    <h3>The Values Award – Innovation</h3>
-                    <span class="award-meta"><span>Thriwe</span> · Mar 2024</span>
+                    <h3>The Values Award &ndash; Innovation</h3>
+                    <span class="award-meta"><span>Thriwe</span> &middot; Mar 2024</span>
                 </li>
                 <li class="award-item">
-                    <h3>The Values Award – Impeccable</h3>
-                    <span class="award-meta"><span>Thriwe</span> · Mar 2023</span>
+                    <h3>The Values Award &ndash; Impeccable</h3>
+                    <span class="award-meta"><span>Thriwe</span> &middot; Mar 2023</span>
                 </li>
             </ul>
         </section>

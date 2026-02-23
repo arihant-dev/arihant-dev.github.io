@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arihant - Journal</title>
+    <meta name="description" content="Arihant Jain's journal - thoughts on distributed systems, MapReduce, and backend engineering.">
+    <link rel="canonical" href="https://arihant-dev.github.io/journal.html">
+    <meta property="og:title" content="Arihant Jain &middot; Journal">
+    <meta property="og:description" content="Thoughts on distributed systems, MapReduce, and backend engineering.">
+    <meta property="og:url" content="https://arihant-dev.github.io/journal.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AJ</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav>
+<body data-theme="dark">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav aria-label="Main navigation">
         <div class="nav-left">
             <a href="index.html">Index</a>
             <a href="experience.html">Experience</a>
@@ -15,13 +22,15 @@
             <a href="journal.html" class="active">Journal</a>
             <a href="status.html">Status</a>
         </div>
-        <button class="theme-toggle" id="theme-toggle">
-            <span class="theme-toggle-text">LIGHT MODE</span>
-        </button>
-        <button class="hamburger"></button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme (t)" aria-label="Toggle dark/light theme">&#9790;</button>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"></button>
     </nav>
 
-    <main>
+    <div class="kbd-hint" id="kbd-hint">
+        <span><kbd>1</kbd>-<kbd>5</kbd> pages &middot; <kbd>j</kbd>/<kbd>k</kbd> scroll &middot; <kbd>t</kbd> theme</span>
+    </div>
+
+    <main id="main-content">
         <section id="journal">
             <div class="section-heading">
                 <h2>Journal</h2>
@@ -32,11 +41,11 @@
                     <span class="blog-date">December 10, 2025</span>
                     <div class="blog-content">
                         <p>
-                            Recently, I've been diving deep into distributed systems and came across the fascinating concept of Map Reduce. 
+                            Recently, I've been diving deep into distributed systems and came across the fascinating concept of Map Reduce.
                             It's a programming model and an associated implementation for processing and generating big data sets with a parallel, distributed algorithm on a cluster.
                         </p>
                         <p>
-                            Inspired by the <a href="https://github.com/gunnarmorling/1brc" target="_blank" rel="noopener noreferrer">1 Billion Row Challenge</a> hosted on GitHub, 
+                            Inspired by the <a href="https://github.com/gunnarmorling/1brc" target="_blank" rel="noopener noreferrer">1 Billion Row Challenge</a> hosted on GitHub,
                             I decided to implement a simplified version of Map Reduce for a side project. The goal was to process a massive dataset efficiently by splitting the work across multiple nodes (Map phase) and then aggregating the results (Reduce phase).
                         </p>
                         <p>
@@ -51,5 +60,6 @@
 
     <script src="script.js"></script>
     <script src="oneko.js"></script>
+    <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arihant - Developer Portfolio</title>
+    <title>Arihant Jain &middot; Software Engineer</title>
+    <meta name="description" content="Arihant Jain - Software Engineer specializing in Go, distributed systems, and microservices. 4+ years of backend at scale. MSc at EPITA, Paris.">
+    <meta name="author" content="Arihant Jain">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://arihant-dev.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arihant Jain &middot; Software Engineer">
+    <meta property="og:description" content="Go, distributed systems, microservices. 4+ years backend at scale. MSc CS at EPITA, Paris.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arihant-dev.github.io/">
+    <meta property="og:image" content="https://arihant-dev.github.io/profile_photo.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>AJ</text></svg>">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
-<body>
-    <nav>
+<body data-theme="dark">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav aria-label="Main navigation">
         <div class="nav-left">
             <a href="index.html" class="active">Index</a>
             <a href="experience.html">Experience</a>
@@ -15,21 +34,32 @@
             <a href="journal.html">Journal</a>
             <a href="status.html">Status</a>
         </div>
-        <button class="theme-toggle" id="theme-toggle">
-            <span class="theme-toggle-text">LIGHT MODE</span>
-        </button>
-        <button class="hamburger"></button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme (t)" aria-label="Toggle dark/light theme">&#9790;</button>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"></button>
     </nav>
 
-    <main>
+    <div class="kbd-hint" id="kbd-hint">
+        <span><kbd>1</kbd>-<kbd>5</kbd> pages &middot; <kbd>j</kbd>/<kbd>k</kbd> scroll &middot; <kbd>t</kbd> theme</span>
+    </div>
+
+    <main id="main-content">
         <section id="hero">
-            <h1 class="hero-title">Arihant Jain</h1>
-            <h2 class="hero-subtitle">Software Engineer &middot; Distributed Systems &middot; Go</h2>
-            <p class="hero-description">
-                I build backend systems that handle real traffic. 4+ years shipping
-                microservices, event-driven pipelines, and cloud infrastructure at scale.
-                Currently deepening my systems knowledge through a Master's at EPITA, Paris.
-            </p>
+            <div class="hero-inner">
+                <img src="profile_photo.jpg" alt="Arihant Jain" class="hero-photo" />
+                <div class="hero-text">
+                    <h1 class="hero-title">Arihant Jain</h1>
+                    <h2 class="hero-subtitle">Software Engineer &middot; Distributed Systems &middot; Go</h2>
+                    <p class="hero-description">
+                        I write Go, break monoliths, and keep distributed systems from falling over.
+                        4+ years of backend at scale, now doing a Master's at EPITA in Paris because
+                        I wanted to understand the theory behind the things I already build.
+                    </p>
+                </div>
+            </div>
+            <div class="hero-map">
+                <div id="map"></div>
+                <div class="map-caption">Cachan, France &middot; UTC+1</div>
+            </div>
         </section>
 
         <section id="about">
@@ -39,58 +69,105 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Before grad school, I spent four years at Thriwe as the engineer who
-                        migrated a PHP monolith to Go microservices, built the notification
-                        service that pushed 10k+ messages a day at 99.9% uptime, and
-                        designed Kafka pipelines processing 5k events/s for banking partners
-                        like HSBC and Mastercard.
+                        Before grad school, I spent four years at Thriwe where I
+                        killed a PHP monolith and replaced it with Go microservices,
+                        built the notification service that pushed 10k+ messages/day at
+                        99.9% uptime, and wired up Kafka pipelines doing 5k events/s
+                        for banking partners (HSBC, Mastercard). The kind of work where
+                        if your code breaks, someone's credit card stops working.
                     </p>
                     <p>
-                        I care about systems that stay up, code that other people can
-                        operate, and CI/CD pipelines that let teams ship daily instead of
-                        monthly. My work sits at the intersection of reliability engineering,
-                        API design, and developer tooling.
+                        I care about systems that stay up at 3 AM without waking anyone
+                        up, code that the next person can actually read, and CI/CD
+                        pipelines that let teams ship daily instead of monthly. If it
+                        involves concurrency, fault tolerance, or making services talk
+                        to each other reliably &mdash; I'm interested.
                     </p>
-                    <div class="seeking-notice">
+                    <div class="seeking-notice" role="alert">
                         Open to <strong>internship (Stage PFE)</strong> from
                         <strong>March 2026</strong> and <strong>CDI</strong> from
-                        <strong>September 2026</strong> &mdash; based in France.
+                        <strong>September 2026</strong> &mdash; based in France, work authorization included.
+                        <span class="notice-fr">Disponible pour un stage (PFE) d&egrave;s mars 2026 et CDI d&egrave;s septembre 2026 &mdash; bas&eacute; en France.</span>
                     </div>
-                    <p>What I work with:</p>
-                    <div class="skills-categories">
-                        <div class="skill-category">
-                            <span class="skill-category-name">Languages:</span>
-                            <span class="skill-category-items">Go, Python, SQL, C/C++</span>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-category-name">Systems:</span>
-                            <span class="skill-category-items">Microservices, event-driven architecture, concurrency, fault tolerance, observability</span>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-category-name">Infrastructure:</span>
-                            <span class="skill-category-items">AWS (EC2, EKS), Docker, Terraform, Linux</span>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-category-name">Data &amp; APIs:</span>
-                            <span class="skill-category-items">PostgreSQL, Redis, Kafka, SQS, gRPC, REST, GraphQL</span>
-                        </div>
-                        <div class="skill-category">
-                            <span class="skill-category-name">DevOps:</span>
-                            <span class="skill-category-items">GitHub Actions, CI/CD, Makefiles, Docker Compose</span>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-heading">
+                <h2>Things I Work With</h2>
+            </div>
+            <div class="skills-grid" role="list">
+                <div class="skill-badge" title="Go" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go" width="28" height="28" />
+                    <span>Go</span>
+                </div>
+                <div class="skill-badge" title="Python" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="28" height="28" />
+                    <span>Python</span>
+                </div>
+                <div class="skill-badge" title="C/C++" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" width="28" height="28" />
+                    <span>C/C++</span>
+                </div>
+                <div class="skill-badge" title="PostgreSQL" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="28" height="28" />
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="skill-badge" title="Redis" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis" width="28" height="28" />
+                    <span>Redis</span>
+                </div>
+                <div class="skill-badge" title="Apache Kafka" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka" width="28" height="28" />
+                    <span>Kafka</span>
+                </div>
+                <div class="skill-badge" title="Docker" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="28" height="28" />
+                    <span>Docker</span>
+                </div>
+                <div class="skill-badge" title="Terraform" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" width="28" height="28" />
+                    <span>Terraform</span>
+                </div>
+                <div class="skill-badge" title="AWS" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="28" height="28" />
+                    <span>AWS</span>
+                </div>
+                <div class="skill-badge" title="Linux" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" width="28" height="28" />
+                    <span>Linux</span>
+                </div>
+                <div class="skill-badge" title="Git" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="28" height="28" />
+                    <span>Git</span>
+                </div>
+                <div class="skill-badge" title="GitHub Actions" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" width="28" height="28" />
+                    <span>CI/CD</span>
+                </div>
+                <div class="skill-badge" title="GraphQL" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" alt="GraphQL" width="28" height="28" />
+                    <span>GraphQL</span>
+                </div>
+                <div class="skill-badge" title="gRPC" role="listitem">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grpc/grpc-original.svg" alt="gRPC" width="28" height="28" />
+                    <span>gRPC</span>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <span class="contact-overline">Contact</span>
-            <h2 class="contact-title">Let's Talk</h2>
+            <h2 class="contact-title">Say Hello</h2>
             <p class="contact-text">
-                Interested in backend engineering, distributed systems, or
-                infrastructure work. Always happy to discuss a hard problem.
+                Working on something distributed, writing Go, or just want to
+                argue about whether gRPC is better than REST? I'm always up for it.
             </p>
-            <a class="email-link" href="mailto:jainarj411@gmail.com">jainarj411@gmail.com</a>
+            <div class="contact-actions">
+                <a class="email-link" href="mailto:jainarj411@gmail.com">jainarj411@gmail.com</a>
+                <a class="email-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">R&Eacute;SUM&Eacute; (PDF)</a>
+            </div>
             <div class="social-links">
                 <a href="https://github.com/arihant-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://linkedin.com/in/ariihantijain" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -99,9 +176,11 @@
     </main>
 
     <footer>
-         <p>Built by Arihant | Inspired by Brittany Chiang & <a href="https://nirv.me/" target="_blank" rel="noopener noreferrer">AnarchistHoneybun</a></p>
+         <p>Handcrafted with monospace fonts and questionable CSS by Arihant &middot; Inspired by Brittany Chiang &amp; <a href="https://nirv.me/" target="_blank" rel="noopener noreferrer">AnarchistHoneybun</a></p>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
     <script src="oneko.js"></script>
+    <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
