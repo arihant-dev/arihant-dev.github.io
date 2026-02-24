@@ -36,74 +36,193 @@
                 <h2>Status</h2>
             </div>
 
-            <div class="legend">
-                <strong>Priority:</strong>
-                <span class="priority-indicator"><span class="priority-square priority-square-high"></span> High</span>
-                <span class="priority-indicator"><span class="priority-square priority-square-medium"></span> Medium</span>
-                <span class="priority-indicator"><span class="priority-square priority-square-low"></span> Low</span>
+            <div class="kanban-toolbar">
+                <div class="legend">
+                    <strong>Priority:</strong>
+                    <span class="priority-indicator"><span class="priority-square priority-square-high"></span> High</span>
+                    <span class="priority-indicator"><span class="priority-square priority-square-medium"></span> Medium</span>
+                    <span class="priority-indicator"><span class="priority-square priority-square-low"></span> Low</span>
+                </div>
+                <div class="kanban-hint">Drag cards between columns to reorganize</div>
             </div>
 
             <div class="kanban-board">
-                <div class="kanban-column">
-                    <div class="column-header">UPCOMING</div>
-                    <div class="column-content">
-                        <div class="kanban-card priority-high">
-                            <div class="card-title">Hike</div>
-                            <div class="card-description">Domaine d'Ors and the Vall&eacute;e de la M&eacute;rantaise</div>
-                            <div class="card-meta">Sunday, 14th December</div>
+                <div class="kanban-column" data-column="upcoming">
+                    <div class="column-header">
+                        <span class="column-title">Upcoming</span>
+                        <span class="column-count">1</span>
+                    </div>
+                    <div class="column-content" data-column="upcoming">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-1">
+                            <div class="card-tags">
+                                <span class="card-tag tag-personal">personal</span>
+                            </div>
+                            <div class="card-title">Hike &mdash; Vall&eacute;e de la M&eacute;rantaise</div>
+                            <div class="card-description">Domaine d'Ors and the Vall&eacute;e de la M&eacute;rantaise trail near Chevreuse. ~14km loop through the forest.</div>
+                            <div class="card-meta">
+                                <span>Sunday, 14th December</span>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="column-header">TO DO</div>
-                    <div class="column-content">
-                        <div class="kanban-card priority-high">
+                <div class="kanban-column" data-column="todo">
+                    <div class="column-header">
+                        <span class="column-title">To Do</span>
+                        <span class="column-count">2</span>
+                    </div>
+                    <div class="column-content" data-column="todo">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-2">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
                             <div class="card-title">Concurrent and Distributed Systems</div>
-                            <div class="card-description">Follow University of Cambridge course - <a href="https://www.cl.cam.ac.uk/teaching/2122/ConcDistSys/" target="_blank" rel="noopener noreferrer">Concurrent and Distributed Systems</a></div>
-                            <div class="card-meta">Est. Dec 2025</div>
+                            <div class="card-description">Follow University of Cambridge course &mdash; <a href="https://www.cl.cam.ac.uk/teaching/2122/ConcDistSys/" target="_blank" rel="noopener noreferrer">ConcDistSys</a>. Covers mutual exclusion, consensus, replication, and Byzantine fault tolerance.</div>
+                            <div class="card-meta">
+                                <span>Est. Q1 2026</span>
+                            </div>
                         </div>
-                        <div class="kanban-card priority-medium">
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-3">
+                            <div class="card-tags">
+                                <span class="card-tag tag-career">career</span>
+                            </div>
                             <div class="card-title">Resume Update</div>
-                            <div class="card-description">Incorporate recent backend experience and projects</div>
-                            <div class="card-meta">Est. Dec 2025</div>
+                            <div class="card-description">Incorporate Forest BD Viewer project, EPITA coursework, and recent backend experience. Tailor for Stage PFE applications.</div>
+                            <div class="card-meta">
+                                <span>Est. Mar 2026</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="kanban-column">
-                    <div class="column-header">IN PROGRESS</div>
-                    <div class="column-content">
-                        <div class="kanban-card priority-high">
+                <div class="kanban-column" data-column="in-progress">
+                    <div class="column-header">
+                        <span class="column-title">In Progress</span>
+                        <span class="column-count">5</span>
+                    </div>
+                    <div class="column-content" data-column="in-progress">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-4">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                            </div>
                             <div class="card-title">Advent of Code 2025</div>
-                            <div class="card-description">Day 10/25 Completed</div>
-                            <div class="card-meta">Daily Challenge</div>
+                            <div class="card-description">Working through daily algorithmic puzzles in Go. Focusing on graph traversal and dynamic programming.</div>
+                            <div class="card-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-text">10 / 25 days</span>
+                            </div>
+                            <div class="card-meta">
+                                <span>Daily Challenge</span>
+                            </div>
                         </div>
-                        <div class="kanban-card priority-high">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-5">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                            </div>
                             <div class="card-title">Leetcode Streak</div>
-                            <div class="card-description">58 Days and counting</div>
-                            <div class="card-meta">Daily Practice</div>
+                            <div class="card-description">Maintaining a daily problem-solving streak. Currently focusing on trees, graphs, and sliding window patterns.</div>
+                            <div class="card-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-fill-streak" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-text">58 days streak</span>
+                            </div>
+                            <div class="card-meta">
+                                <span>Daily Practice</span>
+                            </div>
                         </div>
-                        <div class="kanban-card priority-medium">
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-6">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
                             <div class="card-title">MIT 6.824 Distributed Systems</div>
-                            <div class="card-description">Lecture 3: GFS</div>
-                            <div class="card-meta">Self-Paced</div>
+                            <div class="card-description">Currently on Lecture 3: GFS. Working through the labs &mdash; implementing MapReduce and Raft consensus.</div>
+                            <div class="card-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 15%"></div>
+                                </div>
+                                <span class="progress-text">Lecture 3 / ~20</span>
+                            </div>
+                            <div class="card-meta">
+                                <span>Self-Paced</span>
+                            </div>
                         </div>
-                        <div class="kanban-card priority-medium">
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-7">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                            </div>
                             <div class="card-title">MIT 6.006 (2020)</div>
-                            <div class="card-description">Lecture 12: Binary Heap</div>
-                            <div class="card-meta">Self-Paced</div>
+                            <div class="card-description">Introduction to Algorithms. Currently at Lecture 12: Binary Heaps &mdash; covering priority queues and heap sort.</div>
+                            <div class="card-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-text">Lecture 12 / ~30</span>
+                            </div>
+                            <div class="card-meta">
+                                <span>Self-Paced</span>
+                            </div>
                         </div>
-                        <div class="kanban-card priority-medium">
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-8">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                            </div>
                             <div class="card-title">MIT 6.006 (2009)</div>
-                            <div class="card-description">Lecture 9: Table Doubling, Karp-Rabin</div>
-                            <div class="card-meta">Self-Paced</div>
+                            <div class="card-description">Supplementary viewing for alternative explanations. Currently on Lecture 9: Table Doubling, Karp-Rabin hashing.</div>
+                            <div class="card-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 35%"></div>
+                                </div>
+                                <span class="progress-text">Lecture 9 / ~26</span>
+                            </div>
+                            <div class="card-meta">
+                                <span>Self-Paced</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="kanban-column">
-                    <div class="column-header">DONE</div>
-                    <div class="column-content">
-                        <!-- Placeholder for completed tasks -->
+                <div class="kanban-column" data-column="done">
+                    <div class="column-header">
+                        <span class="column-title">Done</span>
+                        <span class="column-count">3</span>
+                    </div>
+                    <div class="column-content" data-column="done">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-9">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                            </div>
+                            <div class="card-title">Portfolio Website</div>
+                            <div class="card-description">Built this retro-styled portfolio from scratch. Vanilla HTML/CSS/JS, self-hosted fonts, dark mode, keyboard navigation, Leaflet map.</div>
+                            <div class="card-meta">
+                                <span>Completed Dec 2025</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-10">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
+                            <div class="card-title">Forest BD Viewer</div>
+                            <div class="card-description">Full-stack GIS app for French forest biodiversity data. Go + GraphQL + PostGIS + Next.js with Mapbox GL.</div>
+                            <div class="card-meta">
+                                <span>Completed Nov 2025</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-11">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                            </div>
+                            <div class="card-title">MIT 6.824 &mdash; Lab 1: MapReduce</div>
+                            <div class="card-description">Implemented a distributed MapReduce system in Go with coordinator/worker architecture and fault tolerance.</div>
+                            <div class="card-meta">
+                                <span>Completed Dec 2025</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,7 +230,7 @@
     </main>
 
     <script src="script.js"></script>
-    <script src="oneko.js"></script>
+    <script src="kanban.js"></script>
     <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@ Personal portfolio site built with vanilla HTML, CSS, and JavaScript. Retro Web 
 - **Print stylesheet** &mdash; hides interactive elements, appends URLs to links
 - **Custom 404 page**
 - **Analytics** via [GoatCounter](https://www.goatcounter.com/) (privacy-respecting, no cookies)
-- **oneko.js** &mdash; cat that follows your cursor
+- **Kanban board** with drag-and-drop (desktop + touch), progress bars, category tags, and auto-updating column counts
 
 ## Tech Stack
 
@@ -58,7 +58,7 @@ python3 -m http.server 8000
 ├── 404.html            # Custom 404
 ├── styles.css          # All styles (~1800 lines)
 ├── script.js           # Theme, map, keyboard nav
-├── oneko.js            # Cat animation
+├── kanban.js           # Drag-and-drop for status board
 ├── robots.txt          # Crawler directives
 ├── sitemap.xml         # Sitemap for search engines
 ├── profile_photo.jpg   # Hero photo
