@@ -1321,32 +1321,33 @@ p {
 
 .card-tag {
   font-size: 0.65rem;
-  padding: 0.1rem 0.4rem;
+  padding: 0.15rem 0.45rem;
   border: 1px solid #bbb;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: bold;
   color: #555;
-  background-color: #f0f0f0;
+  background-color: #e8e8e8;
+  display: inline-block;
 }
 
 [data-theme="dark"] .card-tag {
-  border-color: #555;
-  color: #aaa;
-  background-color: #1a1a1a;
+  border-color: #666;
+  color: #ccc;
+  background-color: #2a2a2a;
 }
 
-.tag-learning  { border-color: #6a9fb5; color: #4a7f95; }
-.tag-coding    { border-color: #8aaa5e; color: #6a8a3e; }
-.tag-systems   { border-color: #b58a6a; color: #956a4a; }
-.tag-career    { border-color: #9a7abf; color: #7a5a9f; }
-.tag-personal  { border-color: #bf7a7a; color: #9f5a5a; }
+.tag-learning  { border-color: #6a9fb5; color: #3a6f85; background-color: #ddeef5; }
+.tag-coding    { border-color: #8aaa5e; color: #4a6a2e; background-color: #e5f0d5; }
+.tag-systems   { border-color: #b58a6a; color: #7a5030; background-color: #f0e0d0; }
+.tag-career    { border-color: #9a7abf; color: #5a3a7f; background-color: #e8ddf5; }
+.tag-personal  { border-color: #bf7a7a; color: #8f3a3a; background-color: #f5dddd; }
 
-[data-theme="dark"] .tag-learning  { border-color: #4a7f95; color: #6a9fb5; }
-[data-theme="dark"] .tag-coding    { border-color: #6a8a3e; color: #8aaa5e; }
-[data-theme="dark"] .tag-systems   { border-color: #956a4a; color: #b58a6a; }
-[data-theme="dark"] .tag-career    { border-color: #7a5a9f; color: #9a7abf; }
-[data-theme="dark"] .tag-personal  { border-color: #9f5a5a; color: #bf7a7a; }
+[data-theme="dark"] .tag-learning  { border-color: #4a7f95; color: #8abfd5; background-color: #1a2e38; }
+[data-theme="dark"] .tag-coding    { border-color: #6a8a3e; color: #aaca6e; background-color: #1e2a14; }
+[data-theme="dark"] .tag-systems   { border-color: #956a4a; color: #c59a7a; background-color: #2a1e14; }
+[data-theme="dark"] .tag-career    { border-color: #7a5a9f; color: #aa8acf; background-color: #221a30; }
+[data-theme="dark"] .tag-personal  { border-color: #9f5a5a; color: #cf8a8a; background-color: #2a1a1a; }
 
 .card-title {
   font-weight: bold;
