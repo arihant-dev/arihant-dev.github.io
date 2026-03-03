@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arihant-dev.github.io/sitemap.xml
+Sitemap: https://arihant-jain.me/sitemap.xml
