@@ -92,8 +92,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="fonts/FiraMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/FiraMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
     <link rel="stylesheet" href="styles.css?v=2">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Defer non-critical Leaflet CSS (map is below the fold) -->
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
 </head>
 <body data-theme="dark">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -116,7 +129,10 @@
     <main id="main-content">
         <section id="hero">
             <div class="hero-inner">
-                <img src="profile_photo.jpg" alt="Portrait of Arihant Jain, Software Engineer" class="hero-photo" />
+                <picture>
+                    <source srcset="profile_photo.webp" type="image/webp">
+                    <img src="profile_photo_optimized.jpg" alt="Portrait of Arihant Jain, Software Engineer" class="hero-photo" width="239" height="320" fetchpriority="high" />
+                </picture>
                 <div class="hero-text">
                     <h1 class="hero-title">Arihant Jain</h1>
                     <h2 class="hero-subtitle">Software Engineer &middot; Distributed Systems &middot; Go</h2>

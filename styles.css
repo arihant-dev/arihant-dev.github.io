@@ -348,6 +348,10 @@ h2 {
   gap: 1.5rem;
 }
 
+.hero-inner picture {
+  flex-shrink: 0;
+}
+
 .hero-photo {
   width: 130px;
   height: auto;
