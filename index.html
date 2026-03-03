@@ -79,7 +79,7 @@
                 "email": "mailto:jainarj411@gmail.com",
                 "sameAs": [
                     "https://github.com/arihant-dev",
-                    "https://linkedin.com/in/ariihantijain"
+                    "https://www.linkedin.com/in/ariihantijain"
                 ]
             }
         ]
@@ -102,6 +102,24 @@
     <!-- Preload critical fonts -->
     <link rel="preload" href="fonts/FiraMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/FiraMono-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Inline critical font-face to eliminate render delay on LCP text -->
+    <style>
+    @font-face {
+      font-family: 'Fira Mono';
+      src: url('fonts/FiraMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Fira Mono';
+      src: url('fonts/FiraMono-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    </style>
 
     <link rel="stylesheet" href="styles.css?v=2">
     <!-- Defer non-critical Leaflet CSS (map is below the fold) -->
@@ -186,59 +204,59 @@
             </div>
             <div class="skills-grid" role="list">
                 <div class="skill-badge" title="Go" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" alt="Go" width="28" height="28" loading="lazy" />
                     <span>Go</span>
                 </div>
                 <div class="skill-badge" title="Python" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="28" height="28" loading="lazy" />
                     <span>Python</span>
                 </div>
                 <div class="skill-badge" title="C/C++" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" width="28" height="28" loading="lazy" />
                     <span>C/C++</span>
                 </div>
                 <div class="skill-badge" title="PostgreSQL" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="28" height="28" loading="lazy" />
                     <span>PostgreSQL</span>
                 </div>
                 <div class="skill-badge" title="Redis" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis" width="28" height="28" loading="lazy" />
                     <span>Redis</span>
                 </div>
                 <div class="skill-badge" title="Apache Kafka" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka" width="28" height="28" loading="lazy" />
                     <span>Kafka</span>
                 </div>
                 <div class="skill-badge" title="Docker" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="28" height="28" loading="lazy" />
                     <span>Docker</span>
                 </div>
                 <div class="skill-badge" title="Terraform" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg" alt="Terraform" width="28" height="28" loading="lazy" />
                     <span>Terraform</span>
                 </div>
                 <div class="skill-badge" title="AWS" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="28" height="28" loading="lazy" />
                     <span>AWS</span>
                 </div>
                 <div class="skill-badge" title="Linux" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" width="28" height="28" loading="lazy" />
                     <span>Linux</span>
                 </div>
                 <div class="skill-badge" title="Git" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" width="28" height="28" loading="lazy" />
                     <span>Git</span>
                 </div>
                 <div class="skill-badge" title="GitHub Actions" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="GitHub Actions" width="28" height="28" loading="lazy" />
                     <span>CI/CD</span>
                 </div>
                 <div class="skill-badge" title="GraphQL" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" alt="GraphQL" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" alt="GraphQL" width="28" height="28" loading="lazy" />
                     <span>GraphQL</span>
                 </div>
                 <div class="skill-badge" title="gRPC" role="listitem">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grpc/grpc-original.svg" alt="gRPC" width="28" height="28" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grpc/grpc-original.svg" alt="gRPC" width="28" height="28" loading="lazy" />
                     <span>gRPC</span>
                 </div>
             </div>
@@ -257,7 +275,7 @@
             </div>
             <div class="social-links">
                 <a href="https://github.com/arihant-dev" target="_blank" rel="me noopener noreferrer">GitHub</a>
-                <a href="https://linkedin.com/in/ariihantijain" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/ariihantijain" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
             </div>
         </section>
     </main>
@@ -265,7 +283,6 @@
     <footer>
          <p>Handcrafted with monospace fonts and questionable CSS by Arihant &middot; Inspired by Brittany Chiang &amp; <a href="https://nirv.me/" target="_blank" rel="noopener noreferrer">AnarchistHoneybun</a></p>
     </footer>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js?v=2"></script>
 
     <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

@@ -42,54 +42,78 @@ document.addEventListener('click', (e) => {
 
 // =============================================
 // Interactive Map (Leaflet + CartoDB theme-aware tiles)
+// Lazy-loaded: Leaflet JS downloads only when map scrolls into view
 // =============================================
-(function initMap() {
+(function initMapLazy() {
   const mapEl = document.getElementById('map');
-  if (!mapEl || typeof L === 'undefined') return;
+  if (!mapEl) return;
 
-  const map = L.map('map', {
-    center: [48.7942, 2.3268], // Cachan, France
-    zoom: 12,
-    zoomControl: true,
-    scrollWheelZoom: false,
-    attributionControl: false
-  });
+  let mapLoaded = false;
 
-  const darkTiles = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
-  const lightTiles = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+  function loadAndInitMap() {
+    if (mapLoaded) return;
+    mapLoaded = true;
 
-  function getCurrentTheme() {
-    return document.body.getAttribute('data-theme') || 'dark';
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = function() {
+      const map = L.map('map', {
+        center: [48.7942, 2.3268],
+        zoom: 12,
+        zoomControl: true,
+        scrollWheelZoom: false,
+        attributionControl: false
+      });
+
+      const darkTiles = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+      const lightTiles = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+
+      function getCurrentTheme() {
+        return document.body.getAttribute('data-theme') || 'dark';
+      }
+
+      let tileLayer = L.tileLayer(getCurrentTheme() === 'dark' ? darkTiles : lightTiles, {
+        maxZoom: 19
+      }).addTo(map);
+
+      const marker = L.circleMarker([48.7942, 2.3268], {
+        radius: 8,
+        color: '#cc0000',
+        fillColor: '#ff4444',
+        fillOpacity: 0.8,
+        weight: 2
+      }).addTo(map);
+
+      marker.bindPopup('<strong style="font-family:monospace;font-size:12px">Cachan, France</strong>');
+
+      mapEl.addEventListener('click', () => map.scrollWheelZoom.enable());
+      mapEl.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
+
+      const observer = new MutationObserver(() => {
+        const theme = getCurrentTheme();
+        map.removeLayer(tileLayer);
+        tileLayer = L.tileLayer(theme === 'dark' ? darkTiles : lightTiles, {
+          maxZoom: 19
+        }).addTo(map);
+      });
+      observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+    };
+    document.body.appendChild(script);
   }
 
-  let tileLayer = L.tileLayer(getCurrentTheme() === 'dark' ? darkTiles : lightTiles, {
-    maxZoom: 19
-  }).addTo(map);
-
-  // Custom retro marker
-  const marker = L.circleMarker([48.7942, 2.3268], {
-    radius: 8,
-    color: '#cc0000',
-    fillColor: '#ff4444',
-    fillOpacity: 0.8,
-    weight: 2
-  }).addTo(map);
-
-  marker.bindPopup('<strong style="font-family:monospace;font-size:12px">Cachan, France</strong>');
-
-  // Enable scroll zoom only when map is focused
-  mapEl.addEventListener('click', () => map.scrollWheelZoom.enable());
-  mapEl.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
-
-  // Watch for theme changes and swap tiles
-  const observer = new MutationObserver(() => {
-    const theme = getCurrentTheme();
-    map.removeLayer(tileLayer);
-    tileLayer = L.tileLayer(theme === 'dark' ? darkTiles : lightTiles, {
-      maxZoom: 19
-    }).addTo(map);
-  });
-  observer.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] });
+  // Use IntersectionObserver to load map only when visible
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        loadAndInitMap();
+        io.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    io.observe(mapEl);
+  } else {
+    // Fallback for older browsers
+    loadAndInitMap();
+  }
 })();
 
 // =============================================
