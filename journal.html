@@ -3,16 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arihant Jain &middot; Journal</title>
+    <title>Arihant Jain &middot; Journal | Distributed Systems &amp; Backend Engineering</title>
     <meta name="description" content="Arihant Jain's journal - thoughts on distributed systems, MapReduce, and backend engineering.">
     <meta name="author" content="Arihant Jain">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://arihant-jain.me/journal.html">
 
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://arihant-jain.me/"},
+                    {"@type": "ListItem", "position": 2, "name": "Journal", "item": "https://arihant-jain.me/journal.html"}
+                ]
+            },
+            {
+                "@type": "Blog",
+                "@id": "https://arihant-jain.me/journal.html#blog",
+                "url": "https://arihant-jain.me/journal.html",
+                "name": "Arihant Jain's Journal",
+                "description": "Technical articles on distributed systems, Go, Kafka, and backend engineering by Arihant Jain.",
+                "author": {"@id": "https://arihant-jain.me/#person"},
+                "dateModified": "2026-03-07",
+                "blogPost": [
+                    {
+                        "@type": "BlogPosting",
+                        "headline": "Understanding MapReduce & The 1 Billion Row Challenge",
+                        "url": "https://arihant-jain.me/journal.html#mapreduce",
+                        "datePublished": "2025-12-10",
+                        "author": {"@id": "https://arihant-jain.me/#person"},
+                        "keywords": ["MapReduce", "distributed systems", "Go", "1 billion row challenge"]
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
+
     <!-- Open Graph -->
     <meta property="og:title" content="Arihant Jain &middot; Journal">
     <meta property="og:description" content="Thoughts on distributed systems, MapReduce, and backend engineering.">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="blog">
     <meta property="og:url" content="https://arihant-jain.me/journal.html">
     <meta property="og:image" content="https://arihant-jain.me/profile_photo.jpg">
     <meta property="og:site_name" content="Arihant Jain">
@@ -51,6 +88,7 @@
     </div>
 
     <main id="main-content">
+        <h1 class="sr-only">Arihant Jain — Journal</h1>
         <section id="journal">
             <div class="section-heading">
                 <h2>Journal</h2>
