@@ -2,7 +2,7 @@
 
 Personal portfolio site built with vanilla HTML, CSS, and JavaScript. Retro Web 1.0 aesthetic with monospace fonts, outset/inset borders, and a dark-by-default theme.
 
-**Live:** [arihant-dev.github.io](https://arihant-dev.github.io/)
+**Live:** [arihant-jain.me](https://arihant-jain.me)
 
 ## Pages
 
@@ -71,3 +71,5 @@ python3 -m http.server 8000
 ## License
 
 Source code is available for reference. Content and design are personal.
+
+By [Arihant Jain](https://arihant-jain.me)
