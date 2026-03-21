@@ -16,10 +16,12 @@
         "@graph": [
             {
                 "@type": "BreadcrumbList",
+                "@id": "https://arihant-jain.me/oss.html#breadcrumb",
                 "itemListElement": [
                     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://arihant-jain.me/"},
                     {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://arihant-jain.me/oss.html"}
-                ]
+                ],
+                "mainEntity": { "@id": "https://arihant-jain.me/#person" }
             },
             {
                 "@type": "WebPage",
@@ -29,7 +31,8 @@
                 "description": "Software projects by Arihant Jain: Forest BD Viewer (Go + GraphQL + PostGIS full-stack GIS app), Command Shell (POSIX-compliant shell in Go), TVPlay (ASCII video renderer).",
                 "isPartOf": {"@id": "https://arihant-jain.me/#website"},
                 "about": {"@id": "https://arihant-jain.me/#person"},
-                "dateModified": "2026-03-07"
+                "mainEntity": { "@id": "https://arihant-jain.me/#person" },
+                "dateModified": "2026-03-21T00:00:00Z"
             }
         ]
     }
@@ -92,17 +95,19 @@
                     </div>
                     <div class="project-card-body">
                         <p>
-                            I wanted to explore how GIS data works at scale, so I built a
-                            full-stack app for querying and visualizing French forest
-                            biodiversity data (BD For&ecirc;t V2) across &Icirc;le-de-France.
-                            Go backend serves spatial tiles via GraphQL; Next.js frontend
-                            renders multi-level Mapbox layers with polygon-based analysis.
+                            A full-stack geospatial platform demonstrating end-to-end systems thinking:
+                            concurrent LiDAR data fetching with goroutines, PostGIS spatial queries at scale,
+                            and MVT tile rendering optimization. Built to explore real-world performance
+                            challenges in distributed GIS systems processing French forest biodiversity data
+                            (BD For&ecirc;t V2) across &Icirc;le-de-France.
                         </p>
                         <ul class="project-features">
-                            <li>Zoom-dependent layer switching: regions &rarr; departments &rarr; communes &rarr; forest types &rarr; cadastre parcels</li>
-                            <li>Polygon analysis: area computation, forest coverage stats, TFV breakdown, top-8 species by hectare</li>
-                            <li>Redis-cached MVT tile serving (24h/7d TTL) backed by PostGIS spatial queries</li>
+                            <li>Concurrent data fetching with goroutine pools and backpressure handling</li>
+                            <li>PostGIS spatial queries: polygon analysis, area computation, forest coverage stats</li>
+                            <li>Redis-cached MVT tile serving (24h TTL) for sub-100ms response times</li>
+                            <li>Zoom-dependent layer switching (regions &rarr; departments &rarr; communes &rarr; forest types)</li>
                             <li>JWT auth-gated endpoints, context-based EN/FR i18n</li>
+                            <li>Full Docker Compose stack for reproducible deployments</li>
                         </ul>
                         <div class="arch-diagram" aria-label="Architecture diagram">Browser (Next.js/React/Mapbox GL JS)
     |
@@ -142,14 +147,16 @@ Docker Compose (app + db + cache)</div>
                     </div>
                     <div class="project-card-body">
                         <p>
-                            Because apparently I can&rsquo;t stop writing Go. A POSIX-compliant
-                            shell implemented from scratch &mdash; no standard library shortcuts
-                            for process management. Pipes, signals, job control, the works.
+                            A POSIX-compliant shell built from scratch in Go—no standard library shortcuts
+                            for process management. This project demonstrates deep OS understanding: fork/exec/wait,
+                            process groups, signal handling, and job control. The kind of low-level systems thinking
+                            that's foundational to understanding containers, orchestration, and systems reliability.
                         </p>
                         <ul class="project-features">
-                            <li>Pipe handling (<code>|</code>) and I/O redirection</li>
-                            <li>Signal management (SIGINT, SIGTSTP)</li>
-                            <li>Background execution and job control</li>
+                            <li>Raw system calls (fork, execve, wait) for process management</li>
+                            <li>Signal handling (SIGINT, SIGTSTP) and job control</li>
+                            <li>Pipe handling and I/O redirection</li>
+                            <li>Background execution and process groups</li>
                         </ul>
                         <div class="tech-tags">
                             <span class="tech-tag">Go</span>
@@ -180,6 +187,15 @@ Docker Compose (app + db + cache)</div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="cta" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; opacity: 0.85;">
+            <p style="margin: 0;">
+                Interested in distributed systems, reliability engineering, or production challenges?<br />
+                Let's connect: <a href="mailto:jainarj411@gmail.com">Email</a> &middot;
+                <a href="https://www.linkedin.com/in/ariihantijain" target="_blank" rel="me noopener noreferrer">LinkedIn</a> &middot;
+                <a href="https://github.com/arihant-dev" target="_blank" rel="me noopener noreferrer">GitHub</a>
+            </p>
         </section>
     </main>
 
