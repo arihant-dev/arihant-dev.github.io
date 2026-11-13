@@ -88,6 +88,58 @@
                 <h2>Projects</h2>
             </div>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <h3>Distributed KV Store</h3>
+                    </div>
+                    <div class="project-card-body">
+                        <p>
+                            A replicated key-value store on a hand-rolled Raft, plus the grading toolkit for a
+                            distributed systems hackathon. Three nodes, a write-ahead log, and a chaos agent whose
+                            job is to break everything: network partitions, node crashes, heavy concurrent load.
+                        </p>
+                        <ul class="project-features">
+                            <li>Raft log, write-ahead log, and hard state on durable volumes</li>
+                            <li>Leader elections, log replication, and membership over gRPC</li>
+                            <li>HTTP API as the participant-facing contract</li>
+                            <li>Chaos agent, traffic simulator, and orchestrator for grading</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">Raft</span>
+                            <span class="tech-tag">gRPC</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/arihant-dev/distributed-kvstore" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <h3>P2P Version Control</h3>
+                    </div>
+                    <div class="project-card-body">
+                        <p>
+                            Version control with no central server. Devices on the same network find each other and
+                            sync files directly. A Go coordinator handles peers and ordering, a C++ daemon watches the
+                            filesystem and moves the bytes, and a JavaFX app sits on top.
+                        </p>
+                        <ul class="project-features">
+                            <li>Peer discovery over mDNS, TCP connections with heartbeats</li>
+                            <li>Lamport and vector clocks for causal ordering</li>
+                            <li>C++ file watcher with SHA-256 hashing and file transfer</li>
+                            <li>IPC over Unix sockets, metadata in SQLite</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">JavaFX</span>
+                        </div>
+                        <a class="project-link" href="https://github.com/arihant-dev/Action-learning-p2p-version-control" target="_blank" rel="noopener noreferrer">[GitHub]</a>
+                    </div>
+                </div>
+
                 <div class="project-card featured">
                     <div class="project-card-header">
                         <h3>Forest BD Viewer</h3>
