@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arihant Jain &middot; Status</title>
-    <meta name="description" content="Arihant Jain's current status - what I'm working on, learning, and planning.">
+    <meta name="description" content="What Arihant Jain is building, learning, watching and walking right now: kanban board, guitar, running, hiking, swimming, historical Paris, and the Amsterdam, Brussels and Bruges trip.">
     <meta name="author" content="Arihant Jain">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://arihant-jain.me/status.html">
@@ -13,7 +13,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Arihant Jain &middot; Status">
-    <meta property="og:description" content="What I'm currently working on, learning, and planning.">
+    <meta property="og:description" content="What I'm building, learning, watching and walking right now.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arihant-jain.me/status.html">
     <meta property="og:image" content="https://arihant-jain.me/profile_photo.jpg">
@@ -23,7 +23,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Arihant Jain &middot; Status">
-    <meta name="twitter:description" content="What I'm currently working on, learning, and planning.">
+    <meta name="twitter:description" content="What I'm building, learning, watching and walking right now.">
     <meta name="twitter:image" content="https://arihant-jain.me/profile_photo.jpg">
 
     <!-- Favicon -->
@@ -32,9 +32,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
-<body data-theme="dark">
+<body data-theme="dark" class="page-wide">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <nav aria-label="Main navigation">
         <div class="nav-left">
@@ -59,6 +59,19 @@
                 <h2>Status</h2>
             </div>
 
+            <div class="now-term" role="status" aria-label="Right now">
+                <div><span class="prompt">$</span> status --now</div>
+                <div><span class="key">location</span> cachan, fr &middot; <span class="paris-time">--:--</span></div>
+                <div><span class="key">playing</span> a fender &middot; open chords, clean changes</div>
+                <div><span class="key">watching</span> harry potter 2 &middot; chamber of secrets (rewatch, 1/8 done)</div>
+                <div><span class="key">studying</span> mit 6.824 &middot; raft</div>
+                <div><span class="key">moving</span> running &middot; hiking &middot; swimming &middot; weekend cycling</div>
+                <div><span class="key">last ride</span> canal saint-martin &rarr; la villette, v&eacute;lib&rsquo;</div>
+                <div><span class="key">wandering</span> paris, one historical layer at a time</div>
+                <div><span class="key">latest</span> <span id="activity-ticker">loading&hellip;</span></div>
+                <div><span class="prompt">$</span> <span class="blink" aria-hidden="true"></span></div>
+            </div>
+
             <div class="kanban-toolbar">
                 <div class="legend">
                     <strong>Priority:</strong>
@@ -73,17 +86,57 @@
                 <div class="kanban-column" data-column="upcoming">
                     <div class="column-header">
                         <span class="column-title">Upcoming</span>
-                        <span class="column-count">1</span>
+                        <span class="column-count">5</span>
                     </div>
                     <div class="column-content" data-column="upcoming">
-                        <div class="kanban-card priority-high" draggable="true" data-id="card-1">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-ride-ourcq">
                             <div class="card-tags">
-                                <span class="card-tag tag-personal">personal</span>
+                                <span class="card-tag tag-fitness">cycling</span>
                             </div>
-                            <div class="card-title">Hike &mdash; Vall&eacute;e de la M&eacute;rantaise</div>
-                            <div class="card-description">Domaine d'Ors and the Vall&eacute;e de la M&eacute;rantaise trail near Chevreuse. ~14km loop through the forest.</div>
+                            <div class="card-title">Weekend ride &mdash; Canal de l&rsquo;Ourcq</div>
+                            <div class="card-description">V&eacute;lib&rsquo; from La Villette out along the canal towpath. Flat, green, and no cars for kilometres.</div>
                             <div class="card-meta">
-                                <span>Sunday, 14th December</span>
+                                <span>This Saturday</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-run-vincennes">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">running</span>
+                            </div>
+                            <div class="card-title">Run &mdash; Bois de Vincennes 10k</div>
+                            <div class="card-description">Lac Daumesnil loop and back past the ch&acirc;teau. Slow pace, long breath.</div>
+                            <div class="card-meta">
+                                <span>Next Sunday</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-aoc26">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                            </div>
+                            <div class="card-title">Advent of Code 2026</div>
+                            <div class="card-description">25 days of puzzles, in Go again. Target: go past last year's day 10.</div>
+                            <div class="card-meta">
+                                <span>Starts 1 Dec 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-hp3">
+                            <div class="card-tags">
+                                <span class="card-tag tag-film">film</span>
+                            </div>
+                            <div class="card-title">Harry Potter and the Prisoner of Azkaban</div>
+                            <div class="card-description">Film 3 of 8 in the rewatch. Up next once Chamber of Secrets wraps.</div>
+                            <div class="card-meta">
+                                <span>This season</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-low" draggable="true" data-id="card-winter-hike">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">hiking</span>
+                            </div>
+                            <div class="card-title">Winter forest hike</div>
+                            <div class="card-description">A long loop out of Paris once the leaves are down. Fontainebleau or back to the Chevreuse valley.</div>
+                            <div class="card-meta">
+                                <span>Winter 2026</span>
                             </div>
                         </div>
                     </div>
@@ -92,7 +145,7 @@
                 <div class="kanban-column" data-column="todo">
                     <div class="column-header">
                         <span class="column-title">To Do</span>
-                        <span class="column-count">2</span>
+                        <span class="column-count">9</span>
                     </div>
                     <div class="column-content" data-column="todo">
                         <div class="kanban-card priority-high" draggable="true" data-id="card-2">
@@ -103,17 +156,91 @@
                             <div class="card-title">Concurrent and Distributed Systems</div>
                             <div class="card-description">Follow University of Cambridge course &mdash; <a href="https://www.cl.cam.ac.uk/teaching/2122/ConcDistSys/" target="_blank" rel="noopener noreferrer">ConcDistSys</a>. Covers mutual exclusion, consensus, replication, and Byzantine fault tolerance.</div>
                             <div class="card-meta">
-                                <span>Est. Q1 2026</span>
+                                <span>Self-Paced</span>
                             </div>
                         </div>
-                        <div class="kanban-card priority-medium" draggable="true" data-id="card-3">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-first-song">
                             <div class="card-tags">
-                                <span class="card-tag tag-career">career</span>
+                                <span class="card-tag tag-music">guitar</span>
                             </div>
-                            <div class="card-title">Resume Update</div>
-                            <div class="card-description">Incorporate Forest BD Viewer project, EPITA coursework, and recent backend experience. Tailor for Stage PFE applications.</div>
+                            <div class="card-title">First full song on the Fender</div>
+                            <div class="card-description">One song, start to finish, no stopping, eyes off the tab.</div>
                             <div class="card-meta">
-                                <span>Est. Mar 2026</span>
+                                <span>Milestone</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-catacombs">
+                            <div class="card-tags">
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Catacombes de Paris</div>
+                            <div class="card-description">Old limestone quarries under the 14th, turned into an ossuary in the 1780s. The city's basement.</div>
+                            <div class="card-meta">
+                                <span>Paris 14e</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-arts-metiers">
+                            <div class="card-tags">
+                                <span class="card-tag tag-history">history</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
+                            <div class="card-title">Mus&eacute;e des Arts et M&eacute;tiers</div>
+                            <div class="card-description">Pascal's calculator, Foucault's pendulum, early machines. A museum of how things work, founded 1794.</div>
+                            <div class="card-meta">
+                                <span>Paris 3e</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-lutece">
+                            <div class="card-tags">
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Ar&egrave;nes de Lut&egrave;ce</div>
+                            <div class="card-description">A 1st-century Roman arena hidden behind apartment blocks in the 5th. Lutetia, before it was Paris.</div>
+                            <div class="card-meta">
+                                <span>Paris 5e</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-hike-auvers">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">hiking</span>
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Hike &mdash; Auvers-sur-Oise</div>
+                            <div class="card-description">The village Van Gogh painted in his last weeks. River path, wheat fields, the church from the painting.</div>
+                            <div class="card-meta">
+                                <span>Day trip &middot; Val-d&rsquo;Oise</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-low" draggable="true" data-id="card-hike-provins">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">hiking</span>
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Provins &mdash; medieval walls</div>
+                            <div class="card-description">A walled medieval town an hour and a bit from Paris. Ramparts, tower, underground tunnels.</div>
+                            <div class="card-meta">
+                                <span>Day trip &middot; Seine-et-Marne</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-low" draggable="true" data-id="card-ride-versailles">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">cycling</span>
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Ride &mdash; Versailles park by bike</div>
+                            <div class="card-description">Rent a bike at the Grand Canal and ride the gardens end to end. The ch&acirc;teau can wait.</div>
+                            <div class="card-meta">
+                                <span>Spring 2027</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-low" draggable="true" data-id="card-seine-swim">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">swimming</span>
+                            </div>
+                            <div class="card-title">Laps at Piscine Jos&eacute;phine Baker</div>
+                            <div class="card-description">The pool that floats on the Seine. Laps with a river view, when the summer comes back.</div>
+                            <div class="card-meta">
+                                <span>Summer 2027</span>
                             </div>
                         </div>
                     </div>
@@ -122,23 +249,84 @@
                 <div class="kanban-column" data-column="in-progress">
                     <div class="column-header">
                         <span class="column-title">In Progress</span>
-                        <span class="column-count">5</span>
+                        <span class="column-count">11</span>
                     </div>
                     <div class="column-content" data-column="in-progress">
-                        <div class="kanban-card priority-high" draggable="true" data-id="card-4">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-guitar">
                             <div class="card-tags">
-                                <span class="card-tag tag-coding">coding</span>
+                                <span class="card-tag tag-music">guitar</span>
+                                <span class="card-tag tag-learning">learning</span>
                             </div>
-                            <div class="card-title">Advent of Code 2025</div>
-                            <div class="card-description">Working through daily algorithmic puzzles in Go. Focusing on graph traversal and dynamic programming.</div>
+                            <div class="card-title">Learning guitar &mdash; Fender</div>
+                            <div class="card-description">Actively learning on a Fender. Open chords, clean changes, strumming patterns. Fingertips getting harder by the week.</div>
+                            <div class="card-meta">
+                                <span>Daily practice</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-hp">
+                            <div class="card-tags">
+                                <span class="card-tag tag-film">film</span>
+                            </div>
+                            <div class="card-title">Harry Potter rewatch</div>
+                            <div class="card-description">The whole saga again, this season. Philosopher's Stone done, Chamber of Secrets now playing.</div>
                             <div class="card-progress">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 40%"></div>
+                                    <div class="progress-fill progress-fill-film" style="width: 19%"></div>
                                 </div>
-                                <span class="progress-text">10 / 25 days</span>
+                                <span class="progress-text">1 / 8 films &middot; on #2</span>
                             </div>
                             <div class="card-meta">
-                                <span>Daily Challenge</span>
+                                <span>This season</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-run">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">running</span>
+                            </div>
+                            <div class="card-title">Running</div>
+                            <div class="card-description">Easy runs through the city and the suburbs. Long, slow, steady. Best debugging tool I own.</div>
+                            <div class="card-meta">
+                                <span>Routine</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-swim">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">swimming</span>
+                            </div>
+                            <div class="card-title">Swimming</div>
+                            <div class="card-description">Laps. No notifications, no screens, just the count in my head.</div>
+                            <div class="card-meta">
+                                <span>Routine</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-hike">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">hiking</span>
+                            </div>
+                            <div class="card-title">Hiking</div>
+                            <div class="card-description">Weekend trails out of Paris: forests, valleys, the long way round.</div>
+                            <div class="card-meta">
+                                <span>Weekends</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-cycle">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">cycling</span>
+                            </div>
+                            <div class="card-title">Weekend cycling in Paris</div>
+                            <div class="card-description">Saturday mornings on a V&eacute;lib&rsquo;, no plan, just to see stuff. Canals, quais, side streets, whatever looks interesting.</div>
+                            <div class="card-meta">
+                                <span>Weekends</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-paris">
+                            <div class="card-tags">
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Paris, the history way</div>
+                            <div class="card-description">Walking the city by era: Roman Lutetia, medieval &Icirc;le de la Cit&eacute;, Haussmann's boulevards. Every street has a commit history.</div>
+                            <div class="card-meta">
+                                <span>On foot</span>
                             </div>
                         </div>
                         <div class="kanban-card priority-high" draggable="true" data-id="card-5">
@@ -190,7 +378,7 @@
                                 <span>Self-Paced</span>
                             </div>
                         </div>
-                        <div class="kanban-card priority-medium" draggable="true" data-id="card-8">
+                        <div class="kanban-card priority-low" draggable="true" data-id="card-8">
                             <div class="card-tags">
                                 <span class="card-tag tag-learning">learning</span>
                             </div>
@@ -212,9 +400,85 @@
                 <div class="kanban-column" data-column="done">
                     <div class="column-header">
                         <span class="column-title">Done</span>
-                        <span class="column-count">3</span>
+                        <span class="column-count">10</span>
                     </div>
                     <div class="column-content" data-column="done">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-trip">
+                            <div class="card-tags">
+                                <span class="card-tag tag-travel">travel</span>
+                            </div>
+                            <div class="card-title">Amsterdam &rarr; Brussels &rarr; Bruges</div>
+                            <div class="card-description">Last week of July. Canals in Amsterdam, the Grand-Place in Brussels, medieval Bruges on the water. <a href="#travel">Route below</a>.</div>
+                            <div class="card-meta">
+                                <span>Jul 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-run-sceaux">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">running</span>
+                            </div>
+                            <div class="card-title">Run &mdash; Parc de Sceaux loop</div>
+                            <div class="card-description">Next door to Cachan. Around the Grand Canal, up past the ch&acirc;teau, home before the city wakes up.</div>
+                            <div class="card-meta">
+                                <span>Nov 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-ride-canal">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">cycling</span>
+                            </div>
+                            <div class="card-title">Ride &mdash; Canal Saint-Martin to La Villette</div>
+                            <div class="card-description">Iron footbridges, locks, and a coffee at the end of the line.</div>
+                            <div class="card-meta">
+                                <span>Nov 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-hike-meudon">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">hiking</span>
+                            </div>
+                            <div class="card-title">Hike &mdash; For&ecirc;t de Meudon</div>
+                            <div class="card-description">Forest trails ten minutes from the p&eacute;riph&eacute;rique, with a view back over Paris from the terrace.</div>
+                            <div class="card-meta">
+                                <span>Oct 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-hp1">
+                            <div class="card-tags">
+                                <span class="card-tag tag-film">film</span>
+                            </div>
+                            <div class="card-title">Harry Potter and the Philosopher's Stone</div>
+                            <div class="card-description">Film 1 of the rewatch. Back to Privet Drive.</div>
+                            <div class="card-meta">
+                                <span>This season</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-1">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">hiking</span>
+                            </div>
+                            <div class="card-title">Hike &mdash; Vall&eacute;e de la M&eacute;rantaise</div>
+                            <div class="card-description">Domaine d'Ors and the Vall&eacute;e de la M&eacute;rantaise trail near Chevreuse. ~14km loop through the forest.</div>
+                            <div class="card-meta">
+                                <span>Dec 2025</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-4">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                            </div>
+                            <div class="card-title">Advent of Code 2025</div>
+                            <div class="card-description">Daily algorithmic puzzles in Go. Graph traversal and dynamic programming.</div>
+                            <div class="card-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-text">10 / 25 days</span>
+                            </div>
+                            <div class="card-meta">
+                                <span>Dec 2025</span>
+                            </div>
+                        </div>
                         <div class="kanban-card priority-high" draggable="true" data-id="card-9">
                             <div class="card-tags">
                                 <span class="card-tag tag-coding">coding</span>
@@ -250,10 +514,160 @@
                 </div>
             </div>
         </section>
+
+        <section id="off-keyboard">
+            <div class="section-heading">
+                <h2>Off the Keyboard</h2>
+            </div>
+            <p class="section-lede">What happens after the laptop closes.</p>
+
+            <div class="life-grid">
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ run</div>
+                    <h3>Running</h3>
+                    <p>Parc de Sceaux next door, Bois de Vincennes, the quais of the Seine. Most bugs get solved around the second kilometre.</p>
+                    <span class="state">routine</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ hike</div>
+                    <h3>Hiking</h3>
+                    <p>Forests around Paris: Meudon, Chevreuse and the M&eacute;rantaise valley, Auvers-sur-Oise, Fontainebleau next.</p>
+                    <span class="state">weekends</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ ride</div>
+                    <h3>Weekend cycling</h3>
+                    <p>A V&eacute;lib&rsquo;, a free Saturday, no route. Canal Saint-Martin, the quais, Coul&eacute;e verte, wherever the street pulls.</p>
+                    <span class="state">weekends</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ swim</div>
+                    <h3>Swimming</h3>
+                    <p>Laps, lengths, silence. The one hour with no screen in it.</p>
+                    <span class="state">routine</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ play</div>
+                    <h3>Guitar &middot; Fender</h3>
+                    <p>Actively learning. Open chords, chord changes, strumming. Low-level practice, one string at a time.</p>
+                    <span class="state">in progress</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ walk</div>
+                    <h3>Historical Paris</h3>
+                    <p>Hunting the old layers of the city: Roman stones, Gothic glass, revolutionary prisons, iron towers.</p>
+                    <span class="state">on foot</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ watch</div>
+                    <h3>Harry Potter, again</h3>
+                    <p>A full rewatch this season. Film 1 done, film 2 playing, six to go.</p>
+                    <span class="state">1 / 8</span>
+                </div>
+            </div>
+
+            <div class="life-block" id="activity">
+                <h3 class="sub-heading">Activity</h3>
+                <p class="sub-lede">Everything off the keyboard, logged. Runs, rides, hikes, laps, history walks, chords and films.</p>
+                <div class="activity-panel">
+                    <div class="stats-strip" id="activity-stats"></div>
+                    <div class="heatmap" id="activity-heatmap" role="img" aria-label="Activity heatmap for the last 26 weeks"></div>
+                    <div class="heatmap-legend">
+                        <span>last 26 weeks &middot; guitar practice daily since 1 Oct</span>
+                        <span class="scale">less <span class="hm-cell hm-0"></span><span class="hm-cell hm-1"></span><span class="hm-cell hm-2"></span><span class="hm-cell hm-3"></span> more</span>
+                    </div>
+                </div>
+                <div class="activity-panel">
+                    <div class="chips" id="activity-filters" role="toolbar" aria-label="Filter activity"></div>
+                    <ol class="feed" id="activity-feed" aria-live="polite"></ol>
+                    <button type="button" class="feed-more" id="activity-more" hidden>show more</button>
+                </div>
+            </div>
+
+            <div class="life-block" id="weekends">
+                <h3 class="sub-heading">weekends.log</h3>
+                <p class="sub-lede">tail -n 10 &mdash; the last few weekends, newest first.</p>
+                <div class="now-term weekend-log">
+                    <div><span class="prompt">$</span> tail -n 10 ~/weekends.log</div>
+                    <div><span class="key">sat 07 nov</span> ride &middot; canal saint-martin &rarr; la villette, v&eacute;lib&rsquo;</div>
+                    <div><span class="key">sun 01 nov</span> run &middot; parc de sceaux loop, before sunrise</div>
+                    <div><span class="key">sat 31 oct</span> walk &middot; &icirc;le de la cit&eacute;: sainte-chapelle, conciergerie</div>
+                    <div><span class="key">sun 25 oct</span> hike &middot; for&ecirc;t de meudon, terrace view over paris</div>
+                    <div><span class="key">sat 24 oct</span> ride &middot; coul&eacute;e verte ren&eacute;-dumont &rarr; bois de vincennes</div>
+                    <div><span class="key">sun 18 oct</span> swim &middot; laps, then a long lunch</div>
+                    <div><span class="key">sat 17 oct</span> walk &middot; le marais, the oldest houses in paris</div>
+                    <div><span class="key">sun 11 oct</span> run &middot; quais de seine, notre-dame to bercy</div>
+                    <div><span class="key">sat 10 oct</span> ride &middot; montmartre the hard way, uphill</div>
+                    <div><span class="key">sun 04 oct</span> film &middot; harry potter and the philosopher&rsquo;s stone</div>
+                </div>
+            </div>
+
+            <div class="life-block" id="travel">
+                <h3 class="sub-heading">Travel log</h3>
+                <div class="trip-card">
+                    <div class="trip-route" aria-label="Paris to Amsterdam to Brussels to Bruges and back to Paris">
+                        <span>Paris</span><span class="arrow">&rarr;</span>
+                        <span>Amsterdam</span><span class="arrow">&rarr;</span>
+                        <span>Brussels</span><span class="arrow">&rarr;</span>
+                        <span>Bruges</span><span class="arrow">&rarr;</span>
+                        <span>Paris</span>
+                    </div>
+                    <div id="trip-map" role="img" aria-label="Map of the route from Paris to Amsterdam, Brussels, Bruges and back"></div>
+                    <ol class="trip-stops">
+                        <li><strong>01 &middot; Amsterdam</strong>Canals, bridges, and more bikes than people.</li>
+                        <li><strong>02 &middot; Brussels</strong>The Grand-Place, comic-strip walls, waffles as a food group.</li>
+                        <li><strong>03 &middot; Bruges</strong>A medieval town on the water. Belfry, canals, cobblestones.</li>
+                    </ol>
+                    <div class="trip-meta">Last week of July 2026 &middot; Netherlands &amp; Belgium</div>
+                </div>
+            </div>
+
+            <div class="two-col life-block">
+                <div>
+                    <h3 class="sub-heading">Paris, read like source code</h3>
+                    <p class="sub-lede">Every street has a commit history. The layers I go looking for, oldest first.</p>
+                    <div class="table-scroll">
+                        <table class="retro-table">
+                            <thead>
+                                <tr><th>When</th><th>Where</th><th>Why</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1st c.</td><td>Ar&egrave;nes de Lut&egrave;ce</td><td>Roman amphitheatre of Lutetia</td></tr>
+                                <tr><td>1248</td><td>Sainte-Chapelle</td><td>Gothic chapel, walls made of glass</td></tr>
+                                <tr><td>14th c.</td><td>Conciergerie</td><td>Royal palace, then the Revolution's prison</td></tr>
+                                <tr><td>1780s</td><td>Catacombes</td><td>Quarries turned ossuary under the 14th</td></tr>
+                                <tr><td>1790</td><td>Panth&eacute;on</td><td>Crypt of great names, Foucault's pendulum</td></tr>
+                                <tr><td>1794</td><td>Arts et M&eacute;tiers</td><td>Museum of machines and inventions</td></tr>
+                                <tr><td>1804</td><td>P&egrave;re Lachaise</td><td>A city of the dead, with street names</td></tr>
+                                <tr><td>1853&ndash;70</td><td>Haussmann's boulevards</td><td>The great refactor of Paris</td></tr>
+                                <tr><td>1889</td><td>Tour Eiffel</td><td>Wrought iron, riveted by hand</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="sub-heading">This season: the rewatch</h3>
+                    <p class="sub-lede">Harry Potter, all eight, in order.</p>
+                    <ol class="watchlist">
+                        <li class="watched"><span class="mark">[x]</span><span class="title">Philosopher's Stone</span><span class="year">2001</span></li>
+                        <li class="now"><span class="mark">[&gt;]</span><span class="title">Chamber of Secrets</span><span class="year">2002</span></li>
+                        <li><span class="mark">[ ]</span><span class="title">Prisoner of Azkaban</span><span class="year">2004</span></li>
+                        <li><span class="mark">[ ]</span><span class="title">Goblet of Fire</span><span class="year">2005</span></li>
+                        <li><span class="mark">[ ]</span><span class="title">Order of the Phoenix</span><span class="year">2007</span></li>
+                        <li><span class="mark">[ ]</span><span class="title">Half-Blood Prince</span><span class="year">2009</span></li>
+                        <li><span class="mark">[ ]</span><span class="title">Deathly Hallows &ndash; Part 1</span><span class="year">2010</span></li>
+                        <li><span class="mark">[ ]</span><span class="title">Deathly Hallows &ndash; Part 2</span><span class="year">2011</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <p class="last-updated">Last updated 13 Nov 2026 &middot; Paris time <span class="paris-time">--:--</span></p>
+        </section>
     </main>
 
-    <script src="script.js?v=2"></script>
-    <script src="kanban.js?v=2"></script>
+    <script src="script.js?v=3"></script>
+    <script src="kanban.js?v=3"></script>
+    <script src="activity.js?v=1"></script>
     <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

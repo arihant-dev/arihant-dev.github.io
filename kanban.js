@@ -42,6 +42,8 @@
     return closest;
   }
 
+  updateColumnCounts();
+
   // --- Drag events on cards ---
   document.querySelectorAll(".kanban-card").forEach(function (card) {
     card.addEventListener("dragstart", function (e) {
@@ -218,9 +220,10 @@
       if (touchMoved && placeholder && placeholder.parentNode) {
         var targetZone = placeholder.parentNode;
         targetZone.insertBefore(touchCard, placeholder);
-        touchCard.classList.add("card-dropped");
+        var droppedCard = touchCard;
+        droppedCard.classList.add("card-dropped");
         setTimeout(function () {
-          touchCard.classList.remove("card-dropped");
+          droppedCard.classList.remove("card-dropped");
         }, 300);
       }
 
