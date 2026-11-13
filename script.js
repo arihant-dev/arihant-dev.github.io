@@ -47,7 +47,7 @@ document.addEventListener('click', (e) => {
 const PLACES = {
   home:   { at: [48.7942, 2.3268], label: 'home', note: 'Cachan &middot; where I live' },
   school: { at: [48.8157, 2.3633], label: 'school', note: 'EPITA &middot; Le Kremlin-Bic&ecirc;tre' },
-  work:   { at: [48.8712, 2.3536], label: 'work', note: 'Prelude HQ &middot; Paris 10e' }
+  work:   { at: [48.8690, 2.3496], label: 'work', note: 'Prelude &middot; rue d&rsquo;Aboukir, Paris 2e' }
 };
 
 const TRIP = [
