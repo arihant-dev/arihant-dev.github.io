@@ -39,7 +39,7 @@
                 "name": "Arihant Jain - Software Engineer",
                 "description": "Official portfolio of Arihant Jain, a Software Engineer specializing in Go, distributed systems, and microservices.",
                 "datePublished": "2025-01-01T00:00:00Z",
-                "dateModified": "2026-03-21T00:00:00Z",
+                "dateModified": "2026-11-13T00:00:00Z",
                 "mainEntity": { "@id": "https://arihant-jain.me/#person" },
                 "isPartOf": { "@id": "https://arihant-jain.me/#website" },
                 "about": { "@id": "https://arihant-jain.me/#person" },
@@ -63,7 +63,7 @@
                 "familyName": "Jain",
                 "url": "https://arihant-jain.me/",
                 "jobTitle": "Backend Engineer",
-                "description": "Backend engineer specializing in distributed systems and reliability. 4+ years building microservices at Thriwe for 2-3M users. Currently pursuing MSc in Computer Science at EPITA, Paris. Seeking August 2026 internship.",
+                "description": "Backend engineer specializing in distributed systems and reliability. 4+ years building microservices at Thriwe for 2-3M users. Currently pursuing MSc in Computer Science at EPITA, Paris.",
                 "knowsAbout": ["Go", "Distributed Systems", "Microservices", "Kafka", "Reliability Engineering", "Docker", "PostgreSQL", "gRPC", "AWS", "Microservices Architecture"],
                 "alumniOf": [
                     {
@@ -136,7 +136,7 @@
     .hero-inner picture{flex-shrink:0}
     .hero-photo{width:130px;height:auto;max-height:180px;object-fit:cover;object-position:center top;border:2px solid var(--border-color);border-radius:6px;flex-shrink:0}
     [data-theme="dark"] .hero-photo{border:2px solid #555}
-    .hero-text{flex:1;min-width:0}
+    .hero-text{flex:1;min-width:0}.hero-map{margin-top:1.5rem;border:2px solid #666}.hero-map #map{height:260px;width:100%}
     .hero-title{font-size:2.5rem;margin:0 0 .5rem 0;border-bottom:none}
     .hero-subtitle{font-size:1.1rem;font-weight:normal;margin:0 0 1.5rem 0;opacity:.65}
     .hero-description{font-size:.95rem;max-width:600px}
@@ -148,11 +148,8 @@
     </style>
 
     <!-- Load full stylesheet asynchronously -->
-    <link rel="preload" href="styles.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css?v=2"></noscript>
-    <!-- Defer non-critical Leaflet CSS (map is below the fold) -->
-    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+    <link rel="preload" href="styles.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css?v=3"></noscript>
 </head>
 <body data-theme="dark">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -191,7 +188,7 @@
             </div>
             <div class="hero-map">
                 <div id="map"></div>
-                <div class="map-caption">Cachan, France &middot; UTC+1</div>
+                <div class="map-caption"><span class="map-legend"><span><span class="dot" style="background:#ff4444"></span>home &middot; Cachan</span><span><span class="dot" style="background:#66b3ff"></span>school &middot; EPITA</span><span><span class="dot" style="background:#ffcc00"></span>work &middot; Paris 10e</span></span> &middot; <span class="paris-time">Europe/Paris</span></div>
             </div>
         </section>
 
@@ -218,12 +215,12 @@
                         systems design problems at scale—how small architectural decisions cascade
                         through large systems.
                     </p>
-                    <div class="seeking-notice" role="alert">
-                        Open to <strong>internship (Stage PFE)</strong> from
-                        <strong>August 2026</strong> and <strong>CDI</strong> from
-                        <strong>September 2026</strong> &mdash; based in France, work authorization included.
-                        <span class="notice-fr">Disponible pour un stage (PFE) d&egrave;s ao&ucirc;t 2026 et CDI d&egrave;s septembre 2026 &mdash; bas&eacute; en France.</span>
-                    </div>
+                    <p>
+                        Off the keyboard: running, hiking the forests around Paris, swimming,
+                        weekend cycling to see the city, hunting its historical layers, learning
+                        guitar on a Fender, and a Harry Potter rewatch. It's all on the
+                        <a href="status.html#off-keyboard">status board</a>.
+                    </p>
                 </div>
             </div>
         </section>
@@ -313,7 +310,7 @@
     <footer>
          <p>Handcrafted with monospace fonts and questionable CSS by Arihant &middot; Inspired by Brittany Chiang &amp; <a href="https://nirv.me/" target="_blank" rel="noopener noreferrer">AnarchistHoneybun</a></p>
     </footer>
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 
     <script data-goatcounter="https://arihant-dev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
