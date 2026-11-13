@@ -61,13 +61,17 @@
 
             <div class="now-term" role="status" aria-label="Right now">
                 <div><span class="prompt">$</span> status --now</div>
+                <div><span class="key">working</span> software engineer intern @ prelude, paris</div>
+                <div><span class="key">commute</span> bike &middot; cachan &rarr; porte d&rsquo;orl&eacute;ans &rarr; s&eacute;bastopol &rarr; rue d&rsquo;aboukir (rer b if it rains)</div>
+                <div><span class="key">lunch</span> rue montorgueil, probably</div>
                 <div><span class="key">location</span> cachan, fr &middot; <span class="paris-time">--:--</span></div>
                 <div><span class="key">playing</span> a fender &middot; open chords, clean changes</div>
                 <div><span class="key">watching</span> harry potter 2 &middot; chamber of secrets (rewatch, 1/8 done)</div>
                 <div><span class="key">studying</span> mit 6.824 &middot; raft</div>
-                <div><span class="key">moving</span> running &middot; hiking &middot; swimming &middot; weekend cycling</div>
+                <div><span class="key">moving</span> cycling to work &middot; running &middot; hiking &middot; swimming &middot; weekend rides</div>
                 <div><span class="key">last ride</span> canal saint-martin &rarr; la villette, v&eacute;lib&rsquo;</div>
                 <div><span class="key">wandering</span> paris, one historical layer at a time</div>
+                <div><span class="key">til</span> rue d&rsquo;aboukir is named after a napoleon battle (1799)</div>
                 <div><span class="key">latest</span> <span id="activity-ticker">loading&hellip;</span></div>
                 <div><span class="prompt">$</span> <span class="blink" aria-hidden="true"></span></div>
             </div>
@@ -145,7 +149,7 @@
                 <div class="kanban-column" data-column="todo">
                     <div class="column-header">
                         <span class="column-title">To Do</span>
-                        <span class="column-count">9</span>
+                        <span class="column-count">12</span>
                     </div>
                     <div class="column-content" data-column="todo">
                         <div class="kanban-card priority-high" draggable="true" data-id="card-2">
@@ -233,6 +237,37 @@
                                 <span>Spring 2027</span>
                             </div>
                         </div>
+                        <div class="kanban-card priority-low" draggable="true" data-id="card-lunch-tour">
+                            <div class="card-tags">
+                                <span class="card-tag tag-personal">lunch</span>
+                            </div>
+                            <div class="card-title">Lunch tour of the Sentier</div>
+                            <div class="card-description">Rue Montorgueil, Passage du Caire, Passage des Panoramas, rue Saint-Denis. One new spot a week near the office.</div>
+                            <div class="card-meta">
+                                <span>Weekdays &middot; Paris 2e</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-paper-commute">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
+                            <div class="card-title">A paper per commute</div>
+                            <div class="card-description">Spanner, Dynamo, Chubby, Zookeeper. One distributed systems paper per rainy-day RER B ride until the list runs out.</div>
+                            <div class="card-meta">
+                                <span>Rainy days</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-weird-paris">
+                            <div class="card-tags">
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">Weird Paris list</div>
+                            <div class="card-description">The m&egrave;tre &eacute;talon on rue de Vaugirard, the 1830 cannonball in the H&ocirc;tel de Sens, the oldest tree, the ghost m&eacute;tro stations. <a href="journal.html">Full list</a>.</div>
+                            <div class="card-meta">
+                                <span>Ongoing</span>
+                            </div>
+                        </div>
                         <div class="kanban-card priority-low" draggable="true" data-id="card-seine-swim">
                             <div class="card-tags">
                                 <span class="card-tag tag-fitness">swimming</span>
@@ -249,9 +284,41 @@
                 <div class="kanban-column" data-column="in-progress">
                     <div class="column-header">
                         <span class="column-title">In Progress</span>
-                        <span class="column-count">11</span>
+                        <span class="column-count">14</span>
                     </div>
                     <div class="column-content" data-column="in-progress">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-prelude">
+                            <div class="card-tags">
+                                <span class="card-tag tag-career">career</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
+                            <div class="card-title">Software Engineer Intern &mdash; Prelude</div>
+                            <div class="card-description">Verification and messaging over SMS, WhatsApp, Viber and RCS. Provider integrations, pricing data, production checks.</div>
+                            <div class="card-meta">
+                                <span>Since Aug 2026 &middot; Paris</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-telecom">
+                            <div class="card-tags">
+                                <span class="card-tag tag-learning">learning</span>
+                                <span class="card-tag tag-career">career</span>
+                            </div>
+                            <div class="card-title">Learning telecom</div>
+                            <div class="card-description">Sender IDs, delivery receipts, MCC/MNC codes, carrier price lists, and why the same SMS costs ten different prices in ten countries.</div>
+                            <div class="card-meta">
+                                <span>Every day at work</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-bike-commute">
+                            <div class="card-tags">
+                                <span class="card-tag tag-fitness">cycling</span>
+                            </div>
+                            <div class="card-title">Cycling to work</div>
+                            <div class="card-description">Cachan to rue d&rsquo;Aboukir, Paris 2e, most days unless it rains. Porte d&rsquo;Orl&eacute;ans, Boulevard Saint-Michel, across the Seine, up S&eacute;bastopol, left into the Sentier.</div>
+                            <div class="card-meta">
+                                <span>Most weekdays</span>
+                            </div>
+                        </div>
                         <div class="kanban-card priority-high" draggable="true" data-id="card-guitar">
                             <div class="card-tags">
                                 <span class="card-tag tag-music">guitar</span>
@@ -400,9 +467,73 @@
                 <div class="kanban-column" data-column="done">
                     <div class="column-header">
                         <span class="column-title">Done</span>
-                        <span class="column-count">10</span>
+                        <span class="column-count">16</span>
                     </div>
                     <div class="column-content" data-column="done">
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-kvstore">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
+                            <div class="card-title">Distributed KV Store on hand-rolled Raft</div>
+                            <div class="card-description">Replicated store, write-ahead log, and a chaos agent that partitions and kills nodes. Built for a hackathon. <a href="https://github.com/arihant-dev/distributed-kvstore" target="_blank" rel="noopener noreferrer">Repo</a>.</div>
+                            <div class="card-meta">
+                                <span>Sep 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-joined-prelude">
+                            <div class="card-tags">
+                                <span class="card-tag tag-career">career</span>
+                            </div>
+                            <div class="card-title">Joined Prelude</div>
+                            <div class="card-description">Started as a Software Engineer Intern in Paris. No more job hunting.</div>
+                            <div class="card-meta">
+                                <span>Aug 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-office-move">
+                            <div class="card-tags">
+                                <span class="card-tag tag-career">career</span>
+                                <span class="card-tag tag-history">history</span>
+                            </div>
+                            <div class="card-title">New office: rue d&rsquo;Aboukir</div>
+                            <div class="card-description">Prelude moved from the 10e to the Sentier, in the 2e. The street is named after Napoleon&rsquo;s 1799 Aboukir victory; Passage du Caire is around the corner.</div>
+                            <div class="card-meta">
+                                <span>Autumn 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-high" draggable="true" data-id="card-first-prod">
+                            <div class="card-tags">
+                                <span class="card-tag tag-career">career</span>
+                            </div>
+                            <div class="card-title">First change in production</div>
+                            <div class="card-description">Release day at Prelude. Shipped, checked the logs, checked them again.</div>
+                            <div class="card-meta">
+                                <span>Sep 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-first-pr">
+                            <div class="card-tags">
+                                <span class="card-tag tag-career">career</span>
+                                <span class="card-tag tag-coding">coding</span>
+                            </div>
+                            <div class="card-title">First PR merged at Prelude</div>
+                            <div class="card-description">Small diff, big smile.</div>
+                            <div class="card-meta">
+                                <span>Aug 2026</span>
+                            </div>
+                        </div>
+                        <div class="kanban-card priority-medium" draggable="true" data-id="card-p2p">
+                            <div class="card-tags">
+                                <span class="card-tag tag-coding">coding</span>
+                                <span class="card-tag tag-systems">systems</span>
+                            </div>
+                            <div class="card-title">P2P Version Control</div>
+                            <div class="card-description">Serverless file sync between devices: Go coordinator, C++ watcher, vector clocks. <a href="https://github.com/arihant-dev/Action-learning-p2p-version-control" target="_blank" rel="noopener noreferrer">Repo</a>.</div>
+                            <div class="card-meta">
+                                <span>Jul 2026</span>
+                            </div>
+                        </div>
                         <div class="kanban-card priority-high" draggable="true" data-id="card-trip">
                             <div class="card-tags">
                                 <span class="card-tag tag-travel">travel</span>
@@ -523,6 +654,18 @@
 
             <div class="life-grid">
                 <div class="life-tile">
+                    <div class="glyph">&gt;_ work</div>
+                    <h3>Prelude, Paris 2e</h3>
+                    <p>Software Engineer Intern since August 2026. Telecom providers, pricing data, production checks. Office on rue d&rsquo;Aboukir, lunch on rue Montorgueil.</p>
+                    <span class="state">weekdays</span>
+                </div>
+                <div class="life-tile">
+                    <div class="glyph">&gt;_ commute</div>
+                    <h3>Bike to work</h3>
+                    <p>Cachan to the 2e on two wheels most days: Porte d&rsquo;Orl&eacute;ans, Saint-Michel, across the Seine, up S&eacute;bastopol. RER B only when it rains.</p>
+                    <span class="state">most days</span>
+                </div>
+                <div class="life-tile">
                     <div class="glyph">&gt;_ run</div>
                     <h3>Running</h3>
                     <p>Parc de Sceaux next door, Bois de Vincennes, the quais of the Seine. Most bugs get solved around the second kilometre.</p>
@@ -602,6 +745,23 @@
                 </div>
             </div>
 
+            <div class="life-block" id="weekday">
+                <h3 class="sub-heading">day.log</h3>
+                <p class="sub-lede">A normal weekday, more or less.</p>
+                <div class="now-term">
+                    <div><span class="prompt">$</span> cat ~/day.log</div>
+                    <div><span class="key">07:00</span> run at parc de sceaux, or 20 minutes of chords</div>
+                    <div><span class="key">08:30</span> bike to work, up boulevard de s&eacute;bastopol (rer b and a paper if it rains)</div>
+                    <div><span class="key">09:30</span> prelude, rue d&rsquo;aboukir &middot; coffee, then the logs</div>
+                    <div><span class="key">10:00</span> provider apis, pricing data, code review</div>
+                    <div><span class="key">12:30</span> lunch on rue montorgueil, or a lap of passage du caire</div>
+                    <div><span class="key">14:00</span> build, test on dev, ship, watch the panels</div>
+                    <div><span class="key">18:30</span> ride home the long way along canal saint-martin, or laps at the pool</div>
+                    <div><span class="key">21:00</span> guitar, then one more harry potter chapter of the rewatch</div>
+                    <div><span class="key">23:30</span> <span class="prompt">sleep(8h)</span></div>
+                </div>
+            </div>
+
             <div class="life-block" id="travel">
                 <h3 class="sub-heading">Travel log</h3>
                 <div class="trip-card">
@@ -633,14 +793,25 @@
                             </thead>
                             <tbody>
                                 <tr><td>1st c.</td><td>Ar&egrave;nes de Lut&egrave;ce</td><td>Roman amphitheatre of Lutetia</td></tr>
+                                <tr><td>c. 1200</td><td>Wall of Philippe Auguste</td><td>12th-century city wall, still standing in the Marais</td></tr>
                                 <tr><td>1248</td><td>Sainte-Chapelle</td><td>Gothic chapel, walls made of glass</td></tr>
                                 <tr><td>14th c.</td><td>Conciergerie</td><td>Royal palace, then the Revolution's prison</td></tr>
+                                <tr><td>1407</td><td>Maison de Nicolas Flamel</td><td>One of the oldest stone houses in Paris</td></tr>
+                                <tr><td>c. 1601</td><td>Square Ren&eacute;-Viviani</td><td>The oldest tree in Paris, on crutches</td></tr>
+                                <tr><td>1672</td><td>Porte Saint-Denis</td><td>Triumphal arch, a few streets from work</td></tr>
                                 <tr><td>1780s</td><td>Catacombes</td><td>Quarries turned ossuary under the 14th</td></tr>
+                                <tr><td>1780s</td><td>Rotonde de la Villette</td><td>Toll house in the tax wall of Paris</td></tr>
                                 <tr><td>1790</td><td>Panth&eacute;on</td><td>Crypt of great names, Foucault's pendulum</td></tr>
                                 <tr><td>1794</td><td>Arts et M&eacute;tiers</td><td>Museum of machines and inventions</td></tr>
+                                <tr><td>1796</td><td>M&egrave;tre &eacute;talon</td><td>A marble metre on rue de Vaugirard</td></tr>
+                                <tr><td>1798</td><td>Passage du Caire</td><td>Oldest covered passage, around the corner from work</td></tr>
                                 <tr><td>1804</td><td>P&egrave;re Lachaise</td><td>A city of the dead, with street names</td></tr>
+                                <tr><td>1830</td><td>H&ocirc;tel de Sens</td><td>A cannonball still stuck in the facade</td></tr>
                                 <tr><td>1853&ndash;70</td><td>Haussmann's boulevards</td><td>The great refactor of Paris</td></tr>
+                                <tr><td>1860s</td><td>Canal Saint-Martin</td><td>Two kilometres of it go underground</td></tr>
                                 <tr><td>1889</td><td>Tour Eiffel</td><td>Wrought iron, riveted by hand</td></tr>
+                                <tr><td>1889</td><td>&Icirc;le aux Cygnes</td><td>A Statue of Liberty facing the original</td></tr>
+                                <tr><td>1939</td><td>Ghost m&eacute;tro stations</td><td>Arsenal, Croix-Rouge, Saint-Martin</td></tr>
                             </tbody>
                         </table>
                     </div>

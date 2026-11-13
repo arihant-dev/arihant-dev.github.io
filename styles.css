@@ -2486,3 +2486,14 @@ p {
 #activity-ticker.ticker-out { opacity: 0; }
 
 .two-col > * { min-width: 0; }
+
+.weird-list {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.25rem;
+  list-style: square;
+}
+
+.weird-list li {
+  margin-bottom: 0.45rem;
+  line-height: 1.55;
+}
